@@ -1,4 +1,6 @@
 .vscode/*
+*.ilk
+*pdb
 
 # Prerequisites
 *.d
