@@ -1,6 +1,6 @@
 # CleverAlgorithms
 
-the C++ implementation of [Clever Algorithms](https://github.com/clever-algorithms/CleverAlgorithms).
+The C++ implementation of [Clever Algorithms](https://github.com/clever-algorithms/CleverAlgorithms).
 
 ## Overview
 

@@ -61,7 +61,7 @@ void search(candidate_solution & best, std::vector<std::vector<double> > &search
 			}
 		}
 
-		std::cout << " > iteration=" << iter + 1 << " , best=" << best.cost << std::endl;
+		std::cout << " > iteration=" << iter + 1 << ", best=" << best.cost << std::endl;
 	}
 }
 
