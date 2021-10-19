@@ -1,17 +1,14 @@
-#include <vector>
-#include <numeric>
-#include <algorithm>
-#include <random>
-#include <functional>
-#include <map>
 #include <iostream>
+#include <numeric>
+#include <random>
+#include <vector>
 
 
-typedef struct candidate_solution_st
+using candidate_solution = struct candidate_solution_t
 {
 	std::vector<double> vector;
-	double cost;
-}candidate_solution;
+	double cost = 0.0;
+};
 
 
 double objective_function(std::vector<double>& vector)
@@ -28,9 +25,10 @@ void random_vector(std::vector<double>& rand_vec, std::vector<std::vector<double
 	}
 	rand_vec.resize(minmax.size());
 	std::random_device rd;
-	std::mt19937 generator(rd());;
+	std::mt19937 generator(rd());
 	std::uniform_real_distribution<> distribution(0.0, 1.0);
-	auto random = std::bind(distribution, generator);
+	//auto random = std::bind(distribution, generator);
+	auto random = [&](){return distribution(generator);};
 
 	for (size_t i = 0; i < minmax.size(); ++i)
 	{
@@ -39,7 +37,7 @@ void random_vector(std::vector<double>& rand_vec, std::vector<std::vector<double
 }
 
 
-void search(candidate_solution & best, std::vector<std::vector<double> > &search_space, size_t max_iter)
+void search(candidate_solution& best, std::vector<std::vector<double> >& search_space, size_t max_iter)
 {
 	for (size_t iter = 0; iter < max_iter; ++iter)
 	{
@@ -66,18 +64,18 @@ void search(candidate_solution & best, std::vector<std::vector<double> > &search
 }
 
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	// problem configuration
-	size_t problem_size = 2;
+	const size_t problem_size = 2;
 	std::vector<std::vector<double> > search_space;
 	for (size_t i = 0; i < problem_size; ++i)
 	{
-		std::vector<double> bound = { -5.0, 5.0 };
+		std::vector<double> bound = {-5.0, 5.0};
 		search_space.push_back(bound);
 	}
 	// algorithm configuration
-	size_t max_iter = 100;
+	const size_t max_iter = 100;
 	// execute the algorithm
 	candidate_solution best;
 	search(best, search_space, max_iter);
