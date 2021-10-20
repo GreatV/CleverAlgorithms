@@ -7,7 +7,7 @@
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random = []() {return distribution(generator); };
+auto random_ = []() {return distribution(generator); };
 
 
 using candidate_solution = struct candidate_solution_t
@@ -34,7 +34,7 @@ void random_bitstring(std::string & vector,  const size_t num_bits)
 	vector.clear();
 	for (size_t i = 0; i < num_bits; ++i)
 	{
-		vector.push_back(random() < 0.5 ? '1' : '0');
+		vector.push_back(random_() < 0.5 ? '1' : '0');
 	}
 }
 
@@ -42,7 +42,7 @@ void random_bitstring(std::string & vector,  const size_t num_bits)
 void random_neighbor(std::string& mutant, std::string & bitstring)
 {
 	mutant = bitstring;
-	const auto pos = static_cast<size_t>((bitstring.size() - 1) * random());
+	const auto pos = static_cast<size_t>((bitstring.size() - 1) * random_());
 	mutant[pos] = mutant[pos] == '1' ? '0' : '1';
 }
 

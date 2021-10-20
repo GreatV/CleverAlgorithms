@@ -7,7 +7,7 @@
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random = []() { return distribution(generator); };
+auto random_ = []() { return distribution(generator); };
 
 
 using candidate_solution = struct candidate_solution_t
@@ -25,7 +25,7 @@ double objective_function(std::vector<double>& vector)
 
 double rand_in_bounds(const double min, const double max)
 {
-	return min + (max - min) * random();
+	return min + (max - min) * random_();
 }
 
 

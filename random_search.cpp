@@ -28,11 +28,11 @@ void random_vector(std::vector<double>& rand_vec, std::vector<std::vector<double
 	std::mt19937 generator(rd());
 	std::uniform_real_distribution<> distribution(0.0, 1.0);
 	//auto random = std::bind(distribution, generator);
-	auto random = [&](){return distribution(generator);};
+	auto random_ = [&](){return distribution(generator);};
 
 	for (size_t i = 0; i < minmax.size(); ++i)
 	{
-		rand_vec[i] = minmax[i][0] + (minmax[i][1] - minmax[i][0]) * random();
+		rand_vec[i] = minmax[i][0] + (minmax[i][1] - minmax[i][0]) * random_();
 	}
 }
 
