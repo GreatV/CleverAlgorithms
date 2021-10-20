@@ -1,5 +1,4 @@
 #include <iostream>
-#include <numeric>
 #include <random>
 #include <vector>
 #include <string>
@@ -21,16 +20,16 @@ using candidate_solution = struct candidate_solution_t
 double onemax(std::string & vector)
 {
 	double sum = 0.0;
-	for (size_t i = 0; i < vector.size(); ++i)
+	for (char i : vector)
 	{
-		sum += (vector[i] == '1' ? 1 : 0);
+		sum += (i == '1' ? 1 : 0);
 	}
 	
 	return sum;
 }
 
 
-void random_bitstring(std::string & vector,  size_t num_bits)
+void random_bitstring(std::string & vector,  const size_t num_bits)
 {
 	vector.clear();
 	for (size_t i = 0; i < num_bits; ++i)
@@ -43,12 +42,12 @@ void random_bitstring(std::string & vector,  size_t num_bits)
 void random_neighbor(std::string& mutant, std::string & bitstring)
 {
 	mutant = bitstring;
-	size_t pos = (size_t)((bitstring.size() - 1) * random());
+	const auto pos = static_cast<size_t>((bitstring.size() - 1) * random());
 	mutant[pos] = mutant[pos] == '1' ? '0' : '1';
 }
 
 
-void search(candidate_solution & candidate, size_t max_iterations, size_t num_bits)
+void search(candidate_solution & candidate, const size_t max_iterations, const size_t num_bits)
 {
 	random_bitstring(candidate.vector, num_bits);
 	candidate.cost = onemax(candidate.vector);
@@ -64,7 +63,7 @@ void search(candidate_solution & candidate, size_t max_iterations, size_t num_bi
 
 		std::cout << " > iteration "<< iter + 1 << ", best=" << candidate.cost << std::endl;
 
-		if (candidate.cost == num_bits)
+		if (static_cast<size_t>(candidate.cost) == num_bits)
 			break;
 	}
 }

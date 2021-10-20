@@ -7,7 +7,7 @@
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random = [&]() {return distribution(generator); };
+auto random = [&]() { return distribution(generator); };
 
 
 using candidate_solution = struct candidate_solution_t
@@ -23,7 +23,7 @@ double objective_function(std::vector<double>& vector)
 }
 
 
-double rand_in_bounds(double min, double max)
+double rand_in_bounds(const double min, const double max)
 {
 	return min + (max - min) * random();
 }
@@ -43,19 +43,21 @@ void random_vector(std::vector<double>& rand_vec, std::vector<std::vector<double
 }
 
 
-void take_step(std::vector<double> & position, std::vector<std::vector<double> > & minmax, std::vector<double> & current, double step_size)
+void take_step(std::vector<double>& position, std::vector<std::vector<double> >& minmax, std::vector<double>& current,
+               double step_size)
 {
 	position.resize(current.size());
 	for (size_t i = 0; i < current.size(); ++i)
 	{
-		double min = std::max(minmax[i][0], current[i] - step_size);
-		double max = std::min(minmax[i][1], current[i] + step_size);
+		const double min = std::max(minmax[i][0], current[i] - step_size);
+		const double max = std::min(minmax[i][1], current[i] + step_size);
 		position[i] = rand_in_bounds(min, max);
 	}
 }
 
 
-double large_step_size(size_t iter, double step_size, double s_factor, double l_factor, size_t iter_mult)
+double large_step_size(const size_t iter, const double step_size, const double s_factor, const double l_factor,
+                       const size_t iter_mult)
 {
 	if (iter > 0 && (iter % iter_mult == 0))
 	{
@@ -65,7 +67,8 @@ double large_step_size(size_t iter, double step_size, double s_factor, double l_
 }
 
 
-void take_steps(candidate_solution & step, candidate_solution & big_step, std::vector<std::vector<double> > & bounds, std::vector<double> & current, double step_size, double big_step_size)
+void take_steps(candidate_solution& step, candidate_solution& big_step, std::vector<std::vector<double>>& bounds,
+                std::vector<double>& current, const double step_size, const double big_step_size)
 {
 	take_step(step.vector, bounds, current, step_size);
 	step.cost = objective_function(step.vector);
@@ -74,7 +77,9 @@ void take_steps(candidate_solution & step, candidate_solution & big_step, std::v
 }
 
 
-void search(candidate_solution & current, size_t max_iter, std::vector<std::vector<double> > & bounds, double init_factor, double s_factor, double l_factor, size_t iter_mult, size_t max_no_impr)
+void search(candidate_solution& current, const size_t max_iter, std::vector<std::vector<double>>& bounds,
+            const double init_factor,
+            const double s_factor, const double l_factor, const size_t iter_mult, const size_t max_no_impr)
 {
 	double step_size = (bounds[0][1] - bounds[0][0]) * init_factor;
 	size_t count = 0;
@@ -83,7 +88,7 @@ void search(candidate_solution & current, size_t max_iter, std::vector<std::vect
 
 	for (size_t iter = 0; iter < max_iter; ++iter)
 	{
-		double big_step_size = large_step_size(iter, step_size, s_factor, l_factor, iter_mult);
+		const double big_step_size = large_step_size(iter, step_size, s_factor, l_factor, iter_mult);
 		candidate_solution step;
 		candidate_solution big_step;
 		take_steps(step, big_step, bounds, current.vector, step_size, big_step_size);
@@ -106,7 +111,7 @@ void search(candidate_solution & current, size_t max_iter, std::vector<std::vect
 			if (count >= max_no_impr)
 			{
 				count = 0;
-				step_size = (step_size / s_factor);
+				step_size = step_size / s_factor;
 			}
 		}
 		std::cout << "> iteration " << iter + 1 << ", best = " << current.cost << std::endl;
@@ -118,10 +123,10 @@ int main(int argc, char* argv[])
 {
 	// problem configuration
 	const size_t problem_size = 2;
-	std::vector<std::vector<double> > bounds;
+	std::vector<std::vector<double>> bounds;
 	for (size_t i = 0; i < problem_size; ++i)
 	{
-		std::vector<double> bound = { -5.0, 5.0 };
+		std::vector<double> bound = {-5.0, 5.0};
 		bounds.push_back(bound);
 	}
 	// algorithm configuration
@@ -136,9 +141,9 @@ int main(int argc, char* argv[])
 	search(best, max_iter, bounds, init_factor, s_factor, l_factor, iter_mult, max_no_impr);
 
 	std::cout << "Done. Best Solution: c=" << best.cost << ", v={ ";
-	for (size_t i = 0; i < best.vector.size(); ++i)
+	for (double i : best.vector)
 	{
-		std::cout << best.vector[i] << " ";
+		std::cout << i << " ";
 	}
 	std::cout << "}" << std::endl;
 
