@@ -76,7 +76,7 @@ void stochastic_two_opt(std::vector<size_t> & perm, std::vector<size_t> & permut
 		c2 = tmp;
 	}
 
-	for (size_t i = c1; i < c2; ++i)
+	for (size_t i = c1; i < (c2 - c1) / 2; ++i)
 	{
 		size_t tmp = perm[i];
 		perm[i] = perm[c2 - 1 - i + c1];
