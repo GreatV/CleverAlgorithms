@@ -64,7 +64,7 @@ void stochastic_two_opt(std::vector<size_t> & perm, std::vector<size_t> & permut
 	exclude.push_back(c1);
 	exclude.push_back(c1 == 0 ? perm.size() - 1 : c1 - 1);
 	exclude.push_back(c1 == perm.size() - 1 ? 0 : c1 + 1);
-	while (std::find(exclude.begin(), exclude.end(), c2) == exclude.end())
+	while (std::find(exclude.begin(), exclude.end(), c2) != exclude.end())
 	{
 		c2 = (size_t)((perm.size() - 1) * random_());
 	}
