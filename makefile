@@ -4,7 +4,7 @@ CXX=g++
 CXXFLAGS=-Wall -std=c++14 -O2
 
 BIN=random_search adaptive_random_search stochastic_hill_climbing \
-iterated_local_search guided_local_search
+iterated_local_search guided_local_search variable_neighborhood_search
 
 all: $(BIN)
 
@@ -24,6 +24,9 @@ iterated_local_search:iterated_local_search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 guided_local_search:guided_local_search.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+variable_neighborhood_search:variable_neighborhood_search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
