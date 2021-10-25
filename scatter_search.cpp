@@ -9,7 +9,7 @@
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random_ = []() {return distribution(generator); };
+auto random_ = []() { return distribution(generator); };
 
 
 using candidate_solution = struct candidate_solution_t
@@ -18,38 +18,38 @@ using candidate_solution = struct candidate_solution_t
 	double cost = 0.0;
 	double dist = 0.0;
 	bool is_new = false;
-	
-	bool operator < (const candidate_solution_t & candidate) const
+
+	bool operator <(const candidate_solution_t& candidate) const
 	{
 		return vector < candidate.vector;
 	}
 
-	bool operator == (const candidate_solution_t & candidate) const
+	bool operator ==(const candidate_solution_t& candidate) const
 	{
 		return vector == candidate.vector;
 	}
 };
 
 
-double objective_function(std::vector<double> & vector)
+double objective_function(std::vector<double>& vector)
 {
 	double sum = 0.0;
-	for (size_t i = 0; i < vector.size(); ++i)
+	for (double& item : vector)
 	{
-		sum += vector[i] * vector[i];
+		sum += item * item;
 	}
 
 	return sum;
 }
 
 
-double rand_in_bounds(double min, double max)
+double rand_in_bounds(const double min, const double max)
 {
 	return min + (max - min) * random_();
 }
 
 
-void random_vector(std::vector<double> & arr, std::vector<std::vector<double> > & minmax)
+void random_vector(std::vector<double>& arr, std::vector<std::vector<double>>& minmax)
 {
 	arr.clear();
 	arr.resize(minmax.size());
@@ -60,22 +60,22 @@ void random_vector(std::vector<double> & arr, std::vector<std::vector<double> > 
 }
 
 
-void take_step(std::vector<double> & position, std::vector<std::vector<double>> & minmax,
-	std::vector<double> & current, double step_size)
+void take_step(std::vector<double>& position, std::vector<std::vector<double>>& minmax,
+               std::vector<double>& current, const double step_size)
 {
 	position.clear();
 	position.resize(current.size());
 	for (size_t i = 0; i < current.size(); ++i)
 	{
-		double min = std::max(minmax[i][0], current[i] - step_size);
-		double max = std::min(minmax[i][1], current[i] - step_size);
+		const double min = std::max(minmax[i][0], current[i] - step_size);
+		const double max = std::min(minmax[i][1], current[i] - step_size);
 		position[i] = rand_in_bounds(min, max);
 	}
 }
 
 
-void local_search(candidate_solution & best, std::vector<std::vector<double>> & bounds, size_t max_no_improv,
-	double step_size)
+void local_search(candidate_solution& best, std::vector<std::vector<double>>& bounds, const size_t max_no_improv,
+                  const double step_size)
 {
 	size_t count = 0;
 	while (count < max_no_improv)
@@ -91,17 +91,17 @@ void local_search(candidate_solution & best, std::vector<std::vector<double>> & 
 	}
 }
 
-bool is_any_element_equal(std::vector<candidate_solution> & set, std::vector<double> & vec)
+bool is_any_element_equal(std::vector<candidate_solution>& set, std::vector<double>& vec)
 {
 	if (set.empty())
 	{
 		return false;
 	}
 
-	for (size_t i = 0; i < set.size(); ++i)
+	for (auto& i : set)
 	{
-		if (set[i].vector.size() == vec.size() && 
-			std::equal(set[i].vector.begin(), set[i].vector.end(), vec.begin()))
+		if (i.vector.size() == vec.size() &&
+			std::equal(i.vector.begin(), i.vector.end(), vec.begin()))
 		{
 			return true;
 		}
@@ -109,8 +109,8 @@ bool is_any_element_equal(std::vector<candidate_solution> & set, std::vector<dou
 	return false;
 }
 
-void construct_initial_set(std::vector<candidate_solution> & diverse_set, std::vector<std::vector<double>> & bounds,
-	size_t set_size, size_t max_no_improv, double step_size)
+void construct_initial_set(std::vector<candidate_solution>& diverse_set, std::vector<std::vector<double>>& bounds,
+                           const size_t set_size, const size_t max_no_improv, const double step_size)
 {
 	diverse_set.clear();
 	while (diverse_set.size() < set_size)
@@ -127,7 +127,7 @@ void construct_initial_set(std::vector<candidate_solution> & diverse_set, std::v
 }
 
 
-double euclidean_distance(std::vector<double> & c1, std::vector<double> & c2)
+double euclidean_distance(std::vector<double>& c1, std::vector<double>& c2)
 {
 	double sum = 0.0;
 	for (size_t i = 0; i < c1.size(); ++i)
@@ -139,18 +139,18 @@ double euclidean_distance(std::vector<double> & c1, std::vector<double> & c2)
 }
 
 
-double distance(std::vector<double> & v, std::vector<candidate_solution> & set)
+double distance(std::vector<double>& v, std::vector<candidate_solution>& set)
 {
 	double s = 0.0;
-	for (size_t i = 0; i < set.size(); ++i)
+	for (auto& i : set)
 	{
-		s += euclidean_distance(v, set[i].vector);
+		s += euclidean_distance(v, i.vector);
 	}
 	return s;
 }
 
 
-bool cmp_cost(candidate_solution & x, candidate_solution & y)
+bool cmp_cost(candidate_solution& x, candidate_solution& y)
 {
 	if (x.cost < y.cost)
 	{
@@ -160,7 +160,7 @@ bool cmp_cost(candidate_solution & x, candidate_solution & y)
 }
 
 
-bool cmp_dist(candidate_solution & x, candidate_solution & y)
+bool cmp_dist(candidate_solution& x, candidate_solution& y)
 {
 	if (x.dist < y.dist)
 	{
@@ -170,8 +170,8 @@ bool cmp_dist(candidate_solution & x, candidate_solution & y)
 }
 
 
-void diversify(std::vector<candidate_solution> & ref_set, std::vector<candidate_solution> & diverse_set,
-	size_t num_elite, size_t ref_set_size)
+void diversify(std::vector<candidate_solution>& ref_set, std::vector<candidate_solution>& diverse_set,
+               const size_t num_elite, const size_t ref_set_size)
 {
 	std::sort(diverse_set.begin(), diverse_set.end(), cmp_cost);
 	ref_set.clear();
@@ -188,12 +188,12 @@ void diversify(std::vector<candidate_solution> & ref_set, std::vector<candidate_
 	std::sort(sorted_diverse_set.begin(), sorted_diverse_set.end());
 
 	std::set_difference(sorted_diverse_set.begin(), sorted_diverse_set.end(),
-		sorted_ref_set.begin(), sorted_ref_set.end(), 
-		std::inserter(remainder, remainder.begin()));
-	for (size_t i = 0; i < remainder.size(); ++i)
+	                    sorted_ref_set.begin(), sorted_ref_set.end(),
+	                    std::inserter(remainder, remainder.begin()));
+	for (auto& i : remainder)
 	{
-		candidate_solution c = remainder[i];
-		remainder[i].dist = distance(c.vector, ref_set);
+		candidate_solution c = i;
+		i.dist = distance(c.vector, ref_set);
 	}
 	std::sort(remainder.begin(), remainder.end(), cmp_dist);
 
@@ -204,12 +204,12 @@ void diversify(std::vector<candidate_solution> & ref_set, std::vector<candidate_
 }
 
 
-bool is_include(std::vector<std::pair< candidate_solution, candidate_solution>> & subsets,
-	std::pair< candidate_solution, candidate_solution> & subset)
+bool is_include(std::vector<std::pair<candidate_solution, candidate_solution>>& subsets,
+                std::pair<candidate_solution, candidate_solution>& subset)
 {
-	for (size_t i = 0; i < subsets.size(); ++i)
+	for (auto& i : subsets)
 	{
-		if (subsets[i].first == subset.first && subsets[i].second == subset.second)
+		if (i.first == subset.first && i.second == subset.second)
 		{
 			return true;
 		}
@@ -218,15 +218,15 @@ bool is_include(std::vector<std::pair< candidate_solution, candidate_solution>> 
 }
 
 
-void select_subsets(std::vector<std::pair< candidate_solution, candidate_solution>> & subsets, 
-	std::vector<candidate_solution> & ref_set)
+void select_subsets(std::vector<std::pair<candidate_solution, candidate_solution>>& subsets,
+                    std::vector<candidate_solution>& ref_set)
 {
 	std::vector<candidate_solution> additions;
-	for (size_t i = 0; i < ref_set.size(); ++i)
+	for (auto& i : ref_set)
 	{
-		if (ref_set[i].is_new)
+		if (i.is_new)
 		{
-			additions.push_back(ref_set[i]);
+			additions.push_back(i);
 		}
 	}
 
@@ -238,8 +238,8 @@ void select_subsets(std::vector<std::pair< candidate_solution, candidate_solutio
 	std::sort(sorted_additions.begin(), sorted_additions.end());
 
 	std::set_difference(sorted_ref_set.begin(), sorted_ref_set.end(),
-		sorted_additions.begin(), sorted_additions.end(), 
-		std::inserter(remainder, remainder.begin()));
+	                    sorted_additions.begin(), sorted_additions.end(),
+	                    std::inserter(remainder, remainder.begin()));
 
 	if (remainder.empty())
 	{
@@ -247,17 +247,14 @@ void select_subsets(std::vector<std::pair< candidate_solution, candidate_solutio
 	}
 
 	subsets.clear();
-	for (size_t i = 0; i < additions.size(); ++i)
+	for (auto& a : additions)
 	{
-		for (size_t j = 0; j < remainder.size(); ++j)
+		for (auto& r : remainder)
 		{
-			candidate_solution a = additions[i];
-			candidate_solution r = remainder[j];
-
-			std::pair< candidate_solution, candidate_solution> subset_ra(r, a);
+			std::pair<candidate_solution, candidate_solution> subset_ra(r, a);
 			if (a.vector != r.vector && !is_include(subsets, subset_ra))
 			{
-				std::pair< candidate_solution, candidate_solution> subset_ar(a, r);
+				std::pair<candidate_solution, candidate_solution> subset_ar(a, r);
 				subsets.push_back(subset_ar);
 			}
 		}
@@ -265,9 +262,9 @@ void select_subsets(std::vector<std::pair< candidate_solution, candidate_solutio
 }
 
 
-void recombine(std::vector<candidate_solution> & children,
-	std::pair<candidate_solution, candidate_solution> & subset,
-	std::vector<std::vector<double>> & minmax)
+void recombine(std::vector<candidate_solution>& children,
+               std::pair<candidate_solution, candidate_solution>& subset,
+               std::vector<std::vector<double>>& minmax)
 {
 	candidate_solution a = subset.first;
 	candidate_solution b = subset.second;
@@ -279,12 +276,11 @@ void recombine(std::vector<candidate_solution> & children,
 	}
 	children.clear();
 
-	std::vector<candidate_solution> tmp = { a, b };
-	for (size_t i = 0; i < tmp.size(); ++i)
+	std::vector<candidate_solution> tmp = {a, b};
+	for (auto& p : tmp)
 	{
-		candidate_solution p = tmp[i];
-		double direction = random_() < 0.5 ? 1.0 : -1.0;
-		double r = random_();
+		const double direction = random_() < 0.5 ? 1.0 : -1.0;
+		const double r = random_();
 		candidate_solution child;
 		child.vector.resize(minmax.size());
 		for (size_t j = 0; j < child.vector.size(); ++j)
@@ -307,20 +303,19 @@ void recombine(std::vector<candidate_solution> & children,
 }
 
 
-bool explore_subsets(std::vector<std::vector<double> > & bounds, std::vector<candidate_solution> & ref_set,
-	size_t max_no_improv, double step_size)
+bool explore_subsets(std::vector<std::vector<double>>& bounds, std::vector<candidate_solution>& ref_set,
+                     const size_t max_no_improv, const double step_size)
 {
 	bool was_change = false;
-	std::vector<std::pair< candidate_solution, candidate_solution>> subsets;
+	std::vector<std::pair<candidate_solution, candidate_solution>> subsets;
 	select_subsets(subsets, ref_set);
-	for (size_t i = 0; i < ref_set.size(); ++i)
+	for (auto& i : ref_set)
 	{
-		ref_set[i].is_new = false;
+		i.is_new = false;
 	}
 
-	for (size_t i = 0; i < subsets.size(); ++i)
+	for (auto& subset : subsets)
 	{
-		auto subset = subsets[i];
 		std::vector<candidate_solution> candidates;
 		recombine(candidates, subset, bounds);
 
@@ -330,20 +325,19 @@ bool explore_subsets(std::vector<std::vector<double> > & bounds, std::vector<can
 		{
 			improved[j] = candidates[j];
 			local_search(improved[j], bounds, max_no_improv, step_size);
-
 		}
-		for (size_t j = 0; j < improved.size(); ++j)
+		for (auto& j : improved)
 		{
-			if (!is_any_element_equal(ref_set, improved[j].vector))
+			if (!is_any_element_equal(ref_set, j.vector))
 			{
-				improved[j].is_new = true;
+				j.is_new = true;
 				std::sort(ref_set.begin(), ref_set.end(), cmp_cost);
-				auto ref_last = *(ref_set.end() - 1);
-				if (improved[j].cost < ref_last.cost)
+				const auto ref_last = *(ref_set.end() - 1);
+				if (j.cost < ref_last.cost)
 				{
 					ref_set.pop_back();
-					ref_set.push_back(improved[j]);
-					std::cout << " > added, cost=" << improved[j].cost << std::endl;
+					ref_set.push_back(j);
+					std::cout << " > added, cost=" << j.cost << std::endl;
 					was_change = true;
 				}
 			}
@@ -353,23 +347,25 @@ bool explore_subsets(std::vector<std::vector<double> > & bounds, std::vector<can
 }
 
 
-void search(candidate_solution & best, std::vector<std::vector<double> > & bounds,
-	size_t max_iter, size_t ref_set_size, size_t div_set_size, size_t max_no_improv,
-	double step_size, size_t max_elite)
+void search(candidate_solution& best, std::vector<std::vector<double>>& bounds,
+            const size_t max_iter, const size_t ref_set_size,
+            const size_t div_set_size, const size_t max_no_improv,
+            const double step_size, const size_t max_elite)
 {
 	std::vector<candidate_solution> diverse_set;
 	construct_initial_set(diverse_set, bounds, div_set_size, max_no_improv, step_size);
 	std::vector<candidate_solution> ref_set;
 	diversify(ref_set, diverse_set, max_elite, ref_set_size);
 	best = ref_set[0];
-	for (size_t i = 0; i < ref_set.size(); ++i)
+
+	for (auto& item : ref_set)
 	{
-		ref_set[i].is_new = true;
+		item.is_new = true;
 	}
 
 	for (size_t iter = 0; iter < max_iter; ++iter)
 	{
-		bool was_change = explore_subsets(bounds, ref_set, max_no_improv, step_size);
+		const bool was_change = explore_subsets(bounds, ref_set, max_no_improv, step_size);
 		std::sort(ref_set.begin(), ref_set.end(), cmp_cost);
 
 		if (ref_set[0].cost < best.cost)
@@ -387,8 +383,8 @@ void search(candidate_solution & best, std::vector<std::vector<double> > & bound
 int main(int argc, char* argv[])
 {
 	// problem configuration
-	size_t problem_size = 3;
-	std::vector<std::vector<double> > bounds;
+	const size_t problem_size = 3;
+	std::vector<std::vector<double>> bounds;
 	for (size_t i = 0; i < problem_size; ++i)
 	{
 		std::vector<double> bound = {-5.0, 5.0};
@@ -396,19 +392,19 @@ int main(int argc, char* argv[])
 	}
 	// algorithm configuration
 	const size_t max_iter = 100;
-	double step_size = (bounds[0][1] - bounds[0][0]) * 0.005;
+	const double step_size = (bounds[0][1] - bounds[0][0]) * 0.005;
 	const size_t max_no_improv = 30;
 	const size_t ref_set_size = 10;
 	const size_t diverse_set_size = 20;
 	const size_t no_elite = 5;
 	// execute the algorithm
 	candidate_solution best;
-	search(best, bounds, max_iter, ref_set_size, diverse_set_size, 
-		max_no_improv, step_size, no_elite);
+	search(best, bounds, max_iter, ref_set_size, diverse_set_size,
+	       max_no_improv, step_size, no_elite);
 
 	std::cout << "Done. Best Solution: c=" << best.cost << ", v={ ";
-	for (size_t i = 0; i < best.vector.size(); ++i)
-		std::cout << best.vector[i] << " ";
+	for (auto& item : best.vector)
+		std::cout << item << " ";
 	std::cout << "}" << std::endl;
 
 	return 0;
