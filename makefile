@@ -5,7 +5,8 @@ CXXFLAGS=-Wall -std=c++14 -O2
 
 BIN=random_search adaptive_random_search stochastic_hill_climbing \
 iterated_local_search guided_local_search variable_neighborhood_search \
-greedy_randomized_adaptive_search scatter_search tabu_search
+greedy_randomized_adaptive_search scatter_search tabu_search \
+reactive_tabu_search
 
 all: $(BIN)
 
@@ -37,6 +38,9 @@ scatter_search:scatter_search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 tabu_search:tabu_search.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+reactive_tabu_search:reactive_tabu_search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
