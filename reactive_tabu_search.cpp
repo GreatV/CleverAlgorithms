@@ -2,13 +2,12 @@
 #include <numeric>
 #include <random>
 #include <vector>
-#include <iterator>
 #include <algorithm>
 
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random_ = []() {return distribution(generator); };
+auto random_ = []() { return distribution(generator); };
 
 using candidate_solution = struct candidate_solution_t
 {
@@ -18,14 +17,14 @@ using candidate_solution = struct candidate_solution_t
 
 using entry_info = struct entry_info_t
 {
-	std::vector<std::pair<size_t, size_t>> edgelist;
+	std::vector<std::pair<size_t, size_t>> edge_list;
 	std::vector<size_t> edge;
 	size_t iter = 0;
 	size_t visits = 0;
 	bool enable = true;
 };
 
-double euc_2d(std::vector<double> & c1, std::vector<double> &c2)
+double euc_2d(std::vector<double>& c1, std::vector<double>& c2)
 {
 	if (c1.size() != c2.size())
 	{
@@ -41,7 +40,8 @@ double euc_2d(std::vector<double> & c1, std::vector<double> &c2)
 	return sqrt(sum);
 }
 
-double cost(std::vector<size_t> & perm, std::vector<std::vector<double>> & cities)
+
+double cost(std::vector<size_t>& perm, std::vector<std::vector<double>>& cities)
 {
 	double distance = 0.0;
 	for (size_t i = 0; i < perm.size(); ++i)
@@ -55,7 +55,8 @@ double cost(std::vector<size_t> & perm, std::vector<std::vector<double>> & citie
 	return distance;
 }
 
-void random_permutation(std::vector<size_t> & perm, std::vector<std::vector<double>>& cities)
+
+void random_permutation(std::vector<size_t>& perm, std::vector<std::vector<double>>& cities)
 {
 	perm.clear();
 	perm.resize(cities.size());
@@ -67,29 +68,29 @@ void random_permutation(std::vector<size_t> & perm, std::vector<std::vector<doub
 
 	for (size_t i = 0; i < cities.size(); ++i)
 	{
-		const size_t r = (size_t)((perm.size() - 1 - i) * random_()) + i;
+		const size_t r = static_cast<size_t>((perm.size() - 1 - i) * random_()) + i;
 		const size_t tmp = perm[r];
 		perm[r] = perm[i];
 		perm[i] = tmp;
 	}
 }
 
-void stochastic_two_opt(std::vector<size_t> & perm, std::vector<std::vector<size_t>> & edges,
-	std::vector<size_t> & parent)
+void stochastic_two_opt(std::vector<size_t>& perm, std::vector<std::vector<size_t>>& edges,
+                        std::vector<size_t>& parent)
 {
 	perm.clear();
 	edges.clear();
 	perm.resize(parent.size());
 	perm.assign(parent.begin(), parent.end());
-	size_t c1 = (size_t)((perm.size() - 1) * random_());
-	size_t c2 = (size_t)((perm.size() - 1) * random_());
+	auto c1 = static_cast<size_t>((perm.size() - 1) * random_());
+	auto c2 = static_cast<size_t>((perm.size() - 1) * random_());
 	std::vector<size_t> exclude;
 	exclude.push_back(c1);
 	exclude.push_back(c1 == 0 ? perm.size() - 1 : c1 - 1);
 	exclude.push_back(c1 == perm.size() - 1 ? 0 : c1 + 1);
 	while (std::find(exclude.begin(), exclude.end(), c2) != exclude.end())
 	{
-		c2 = (size_t)((perm.size() - 1) * random_());
+		c2 = static_cast<size_t>((perm.size() - 1) * random_());
 	}
 	if (c2 < c1)
 	{
@@ -108,18 +109,17 @@ void stochastic_two_opt(std::vector<size_t> & perm, std::vector<std::vector<size
 	const size_t c1_m_1 = c1 == 0 ? perm.size() - 1 : c1 - 1;
 	const size_t c2_m_1 = c2 == 0 ? perm.size() - 1 : c2 - 1;
 
-	std::vector<size_t> edge0 = { parent[c1_m_1], parent[c1] };
-	std::vector<size_t> edge1 = { parent[c2_m_1], parent[c2] };
+	const std::vector<size_t> edge0 = {parent[c1_m_1], parent[c1]};
+	const std::vector<size_t> edge1 = {parent[c2_m_1], parent[c2]};
 	edges.push_back(edge0);
 	edges.push_back(edge1);
 }
 
-bool is_tabu(std::vector<size_t> & edge, std::vector<entry_info> & tabu_list,
-	const size_t iter, const double prohib_period)
+bool is_tabu(std::vector<size_t>& edge, std::vector<entry_info>& tabu_list,
+             const size_t iter, const double prohib_period)
 {
-	for (size_t i = 0; i < tabu_list.size(); ++i)
+	for (auto& entry : tabu_list)
 	{
-		auto & entry = tabu_list[i];
 		if (entry.edge == edge)
 		{
 			if (entry.iter >= iter - prohib_period)
@@ -132,12 +132,12 @@ bool is_tabu(std::vector<size_t> & edge, std::vector<entry_info> & tabu_list,
 	return false;
 }
 
-void make_tabu(entry_info & entry, std::vector<entry_info> & tabu_list,
-	std::vector<size_t> & edge, const size_t iter)
+void make_tabu(entry_info& entry, std::vector<entry_info>& tabu_list,
+               std::vector<size_t>& edge, const size_t iter)
 {
 	for (size_t i = 0; i < tabu_list.size(); ++i)
 	{
-		auto & item = tabu_list[i];
+		auto& item = tabu_list[i];
 		if (item.edge == edge)
 		{
 			item.iter = iter;
@@ -152,7 +152,7 @@ void make_tabu(entry_info & entry, std::vector<entry_info> & tabu_list,
 	tabu_list.push_back(entry);
 }
 
-void to_edge_list(std::vector<std::pair<size_t, size_t>>& list, std::vector<size_t> & perm)
+void to_edge_list(std::vector<std::pair<size_t, size_t>>& list, std::vector<size_t>& perm)
 {
 	list.clear();
 	for (size_t i = 0; i < perm.size(); ++i)
@@ -170,12 +170,12 @@ void to_edge_list(std::vector<std::pair<size_t, size_t>>& list, std::vector<size
 	}
 }
 
-bool equivalent(std::vector<std::pair<size_t, size_t>> & el1,
-	std::vector<std::pair<size_t, size_t>> & el2)
+bool equivalent(std::vector<std::pair<size_t, size_t>>& el1,
+                std::vector<std::pair<size_t, size_t>>& el2)
 {
-	for (size_t i = 0; i < el1.size(); ++i)
+	for (auto& i : el1)
 	{
-		if (std::find(el2.begin(), el2.end(), el1[i]) == el2.end())
+		if (std::find(el2.begin(), el2.end(), i) == el2.end())
 		{
 			return false;
 		}
@@ -184,16 +184,16 @@ bool equivalent(std::vector<std::pair<size_t, size_t>> & el1,
 	return true;
 }
 
-void generate_candidate(candidate_solution & candidate, std::vector<std::vector<size_t>> & edges,
-	candidate_solution & best,
-	std::vector<std::vector<double>> & cities)
+void generate_candidate(candidate_solution& candidate, std::vector<std::vector<size_t>>& edges,
+                        candidate_solution& best,
+                        std::vector<std::vector<double>>& cities)
 {
 	stochastic_two_opt(candidate.vector, edges, best.vector);
 	candidate.cost = cost(candidate.vector, cities);
 }
 
-void get_candidate_entry(entry_info & entry, std::vector<entry_info> & visited_list,
-	std::vector<size_t> & permutation)
+void get_candidate_entry(entry_info& entry, std::vector<entry_info>& visited_list,
+                         std::vector<size_t>& permutation)
 {
 	std::vector<std::pair<size_t, size_t>> edge_list;
 	to_edge_list(edge_list, permutation);
@@ -201,7 +201,7 @@ void get_candidate_entry(entry_info & entry, std::vector<entry_info> & visited_l
 	for (size_t i = 0; i < visited_list.size(); ++i)
 	{
 		auto& item = visited_list[i];
-		if (equivalent(edge_list, item.edgelist))
+		if (equivalent(edge_list, item.edge_list))
 		{
 			entry = item;
 			entry.enable = true;
@@ -212,10 +212,10 @@ void get_candidate_entry(entry_info & entry, std::vector<entry_info> & visited_l
 	entry.enable = false;
 }
 
-void store_permutation(entry_info & entry, std::vector<entry_info> & visited_list,
-	std::vector<size_t> & permutation, const size_t iteration)
+void store_permutation(entry_info& entry, std::vector<entry_info>& visited_list,
+                       std::vector<size_t>& permutation, const size_t iteration)
 {
-	to_edge_list(entry.edgelist, permutation);
+	to_edge_list(entry.edge_list, permutation);
 	entry.iter = iteration;
 	entry.visits = 1;
 	visited_list.push_back(entry);
@@ -227,18 +227,17 @@ using candidate_info = struct candidate_info_t
 	std::vector<std::vector<size_t>> edges;
 };
 
-void sort_neighborhood(std::vector<candidate_info> & tabu,
-	std::vector<candidate_info> & admissable,
-	std::vector<candidate_info> & candidates,
-	std::vector<entry_info>  & tabu_list,
-	const double prohib_period, const size_t iteration)
+void sort_neighborhood(std::vector<candidate_info>& tabu,
+                       std::vector<candidate_info>& admissable,
+                       std::vector<candidate_info>& candidates,
+                       std::vector<entry_info>& tabu_list,
+                       const double prohib_period, const size_t iteration)
 {
 	tabu.clear();
 	admissable.clear();
 
-	for (size_t i = 0; i < candidates.size(); ++i)
+	for (auto& a : candidates)
 	{
-		auto & a = candidates[i];
 		if (is_tabu(a.edges[0], tabu_list, iteration, prohib_period) ||
 			is_tabu(a.edges[1], tabu_list, iteration, prohib_period))
 		{
@@ -251,7 +250,7 @@ void sort_neighborhood(std::vector<candidate_info> & tabu,
 	}
 }
 
-bool cmp(candidate_info & info_l, candidate_info & info_r)
+bool cmp(candidate_info& info_l, candidate_info& info_r)
 {
 	if (info_l.candidate.cost < info_r.candidate.cost)
 	{
@@ -261,24 +260,24 @@ bool cmp(candidate_info & info_l, candidate_info & info_r)
 	return false;
 }
 
-void search(candidate_solution & best,
-	std::vector<std::vector<double>> & cities,
-	const size_t max_cand,
-	const size_t max_iter,
-	const double increase,
-	const double decrease)
+void search(candidate_solution& best,
+            std::vector<std::vector<double>>& cities,
+            const size_t max_cand,
+            const size_t max_iter,
+            const double increase,
+            const double decrease)
 {
 	candidate_solution current;
 	random_permutation(current.vector, cities);
 	current.cost = cost(current.vector, cities);
 	best = current;
-	std::vector<entry_info> tabu_list;
 	double prohib_period = 1;
-	std::vector<entry_info> visited_list;
 	double avg_size = 1;
 	int last_change = 0;
 	for (size_t iter = 0; iter < max_iter; ++iter)
 	{
+		std::vector<entry_info> visited_list;
+		std::vector<entry_info> tabu_list;
 		entry_info candidate_entry;
 		get_candidate_entry(candidate_entry, visited_list, current.vector);
 		if (candidate_entry.enable)
@@ -290,7 +289,7 @@ void search(candidate_solution & best,
 			if (repetition_interval < 2 * (cities.size() - 1))
 			{
 				avg_size = 0.1 * (iter - candidate_entry.iter) + 0.9 * avg_size;
-				prohib_period = ((double)prohib_period * increase);
+				prohib_period = (prohib_period * increase);
 				last_change = iter;
 			}
 			else
@@ -354,7 +353,7 @@ void search(candidate_solution & best,
 
 		for (size_t i = 0; i < best_move_edges.size(); ++i)
 		{
-			auto & edge = best_move_edges[i];
+			auto& edge = best_move_edges[i];
 			entry_info tmp_entry;
 			make_tabu(tmp_entry, tabu_list, edge, iter);
 		}
@@ -392,7 +391,7 @@ int main(int argc, char* argv[])
 	search(best, berlin52, max_candidates, max_iter, increase, decrease);
 
 	std::cout << "Done. Best Solution: c=" << best.cost << ", v={ ";
-	for (auto & i : best.vector)
+	for (auto& i : best.vector)
 		std::cout << i << " ";
 	std::cout << "}" << std::endl;
 

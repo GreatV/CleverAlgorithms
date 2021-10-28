@@ -1,15 +1,14 @@
 #include <iostream>
-#include <numeric>
 #include <random>
 #include <vector>
 #include <string>
-#include <iterator>
 #include <algorithm>
+
 
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random_ = []() {return distribution(generator); };
+auto random_ = []() { return distribution(generator); };
 
 using candidate_solution = struct candidate_solution_t
 {
@@ -18,10 +17,10 @@ using candidate_solution = struct candidate_solution_t
 };
 
 
-double onemax(std::string & bit_string)
+double onemax(std::string& bit_string)
 {
 	double sum = 0.0;
-	for (auto & item : bit_string)
+	for (auto& item : bit_string)
 	{
 		if (item == '1')
 		{
@@ -32,7 +31,7 @@ double onemax(std::string & bit_string)
 }
 
 
-void random_bitstring(std::string & bit_string, const size_t num_bits)
+void random_bit_string(std::string& bit_string, const size_t num_bits)
 {
 	bit_string.clear();
 	for (size_t i = 0; i < num_bits; ++i)
@@ -42,23 +41,23 @@ void random_bitstring(std::string & bit_string, const size_t num_bits)
 }
 
 
-void binary_tournament(candidate_solution & candidate, std::vector<candidate_solution> & pop)
+void binary_tournament(candidate_solution& candidate, std::vector<candidate_solution>& pop)
 {
-	size_t i = (size_t)((pop.size() - 1) * random_());
-	size_t j = (size_t)((pop.size() - 1) * random_());
+	const auto i = static_cast<size_t>((pop.size() - 1) * random_());
+	auto j = static_cast<size_t>((pop.size() - 1) * random_());
 	while (j == i)
 	{
-		j = (size_t)((pop.size() - 1) * random_());
+		j = static_cast<size_t>((pop.size() - 1) * random_());
 	}
 	candidate = pop[i].fitness > pop[j].fitness ? pop[i] : pop[j];
 }
 
 
-void point_mutation(std::string & child, std::string & bit_string, const double rate)
+void point_mutation(std::string& child, std::string& bit_string, const double rate)
 {
 	std::string tmp;
 
-	for (auto & item : bit_string)
+	for (auto& item : bit_string)
 	{
 		tmp.push_back(random_() < rate ? (item == '1' ? '0' : '1') : item);
 	}
@@ -67,14 +66,14 @@ void point_mutation(std::string & child, std::string & bit_string, const double 
 }
 
 
-void crossover(std::string & child, std::string & parent1, std::string & parent2, const double rate)
+void crossover(std::string& child, std::string& parent1, std::string& parent2, const double rate)
 {
 	if (random_() >= rate)
 	{
 		child = parent1;
 	}
 
-	size_t point = 1 + (size_t)((parent1.size() - 3) * random_());
+	const size_t point = 1 + static_cast<size_t>((parent1.size() - 3) * random_());
 
 	child.clear();
 	for (size_t i = 0; i < point; ++i)
@@ -88,7 +87,8 @@ void crossover(std::string & child, std::string & parent1, std::string & parent2
 }
 
 
-void reproduce(std::vector<candidate_solution> & children, std::vector<candidate_solution> & selected, const size_t pop_size, const double p_cross, const double p_mutation)
+void reproduce(std::vector<candidate_solution>& children, std::vector<candidate_solution>& selected,
+               const size_t pop_size, const double p_cross, const double p_mutation)
 {
 	children.clear();
 	for (size_t i = 0; i < selected.size(); ++i)
@@ -108,7 +108,7 @@ void reproduce(std::vector<candidate_solution> & children, std::vector<candidate
 }
 
 
-bool cmp(candidate_solution & candidate1, candidate_solution & candidate2)
+bool cmp(candidate_solution& candidate1, candidate_solution& candidate2)
 {
 	if (candidate1.fitness > candidate2.fitness)
 	{
@@ -119,14 +119,14 @@ bool cmp(candidate_solution & candidate1, candidate_solution & candidate2)
 }
 
 
-void search(candidate_solution & best, const size_t max_gens, const size_t num_bits, const size_t pop_size,
-	const double p_crossover, const double p_mutation)
+void search(candidate_solution& best, const size_t max_gens, const size_t num_bits, const size_t pop_size,
+            const double p_crossover, const double p_mutation)
 {
 	std::vector<candidate_solution> population;
 	for (size_t i = 0; i < pop_size; ++i)
 	{
 		candidate_solution candidate;
-		random_bitstring(candidate.bit_string, num_bits);
+		random_bit_string(candidate.bit_string, num_bits);
 		candidate.fitness = onemax(candidate.bit_string);
 		population.push_back(candidate);
 	}
@@ -145,7 +145,7 @@ void search(candidate_solution & best, const size_t max_gens, const size_t num_b
 		}
 		std::vector<candidate_solution> children;
 		reproduce(children, selected, pop_size, p_crossover, p_mutation);
-		for (auto & item : children)
+		for (auto& item : children)
 		{
 			item.fitness = onemax(item.bit_string);
 		}
@@ -155,10 +155,10 @@ void search(candidate_solution & best, const size_t max_gens, const size_t num_b
 			best = children[0];
 		}
 		population = children;
-		std::cout << " > gen " << i << ", best: " << best.fitness 
-			<<", " << best.bit_string << std::endl;
+		std::cout << " > gen " << i << ", best: " << best.fitness
+			<< ", " << best.bit_string << std::endl;
 
-		if (best.fitness == num_bits)
+		if (static_cast<size_t>(best.fitness) == num_bits)
 			break;
 	}
 }
