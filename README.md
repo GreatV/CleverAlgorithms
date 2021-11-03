@@ -30,7 +30,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 - [x] Evolutionary Programming
 - [ ] Grammatical Evolution
 - [ ] Gene Expression Programming
-- [x] Learning Classifier System
+- [ ] Learning Classifier System
 
 ## How to build the source code
 
