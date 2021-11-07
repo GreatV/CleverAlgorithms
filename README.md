@@ -36,7 +36,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ### Physical Algorithms
 
-- [ ] Simulated Annealing
+- [x] Simulated Annealing
 - [ ] Extremal Optimization
 - [ ] Harmony Search
 - [ ] Cultural Algorithm
