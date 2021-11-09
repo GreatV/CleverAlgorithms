@@ -7,7 +7,8 @@ BIN=random_search adaptive_random_search stochastic_hill_climbing \
 iterated_local_search guided_local_search variable_neighborhood_search \
 greedy_randomized_adaptive_search scatter_search tabu_search \
 reactive_tabu_search genetic_algorithm evolution_strategies \
-differential_evolution evolutionary_programming simulated_annealing
+differential_evolution evolutionary_programming simulated_annealing \
+extremal_optimization
 
 all: $(BIN)
 
@@ -57,6 +58,9 @@ evolutionary_programming:evolutionary_programming.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 simulated_annealing:simulated_annealing.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+extremal_optimization:extremal_optimization.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
