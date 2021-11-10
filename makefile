@@ -8,7 +8,7 @@ iterated_local_search guided_local_search variable_neighborhood_search \
 greedy_randomized_adaptive_search scatter_search tabu_search \
 reactive_tabu_search genetic_algorithm evolution_strategies \
 differential_evolution evolutionary_programming simulated_annealing \
-extremal_optimization
+extremal_optimization harmony_search
 
 all: $(BIN)
 
@@ -61,6 +61,9 @@ simulated_annealing:simulated_annealing.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 extremal_optimization:extremal_optimization.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+harmony_search:harmony_search.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
