@@ -40,7 +40,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 - [x] Extremal Optimization
 - [x] Harmony Search
 - [x] Cultural Algorithm
-- [ ] Memetic Algorithm
+- [x] Memetic Algorithm
 
 ### Probabilistic Algorithms
 
