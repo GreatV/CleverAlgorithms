@@ -9,7 +9,7 @@ greedy_randomized_adaptive_search scatter_search tabu_search \
 reactive_tabu_search genetic_algorithm evolution_strategies \
 differential_evolution evolutionary_programming simulated_annealing \
 extremal_optimization harmony_search cultural_algorithm \
-memetic_algorithm
+memetic_algorithm population-based_incremental_learning
 
 all: $(BIN)
 
@@ -71,6 +71,9 @@ cultural_algorithm:cultural_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 memetic_algorithm:memetic_algorithm.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+population-based_incremental_learning:population-based_incremental_learning.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
