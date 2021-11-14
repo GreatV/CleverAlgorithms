@@ -20,12 +20,6 @@ using candidate_solution = struct candidate_solution_st
 };
 
 
-using belief_info = struct belief_info_st
-{
-	std::vector<std::vector<double>> normative;
-	candidate_solution situational;
-};
-
 double objective_function(const std::vector<double>& vector)
 {
 	double sum = 0.0;
