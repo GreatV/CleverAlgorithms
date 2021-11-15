@@ -46,7 +46,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 - [x] Population-Based Incremental Learning
 - [x] Univariate Marginal Distribution Algorithm
-- [ ] Compact Genetic Algorithm
+- [x] Compact Genetic Algorithm
 - [ ] Bayesian Optimization Algorithm
 - [ ] Cross-Entropy Method
 

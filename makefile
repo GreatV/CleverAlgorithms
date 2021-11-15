@@ -10,7 +10,8 @@ reactive_tabu_search genetic_algorithm evolution_strategies \
 differential_evolution evolutionary_programming simulated_annealing \
 extremal_optimization harmony_search cultural_algorithm \
 memetic_algorithm population-based_incremental_learning \
-univariate_marginal_distribution_algorithm
+univariate_marginal_distribution_algorithm \
+compact_genetic_algorithm
 
 all: $(BIN)
 
@@ -78,6 +79,9 @@ population-based_incremental_learning:population-based_incremental_learning.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 univariate_marginal_distribution_algorithm:univariate_marginal_distribution_algorithm.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+compact_genetic_algorithm:compact_genetic_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
