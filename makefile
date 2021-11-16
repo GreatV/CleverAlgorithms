@@ -11,7 +11,7 @@ differential_evolution evolutionary_programming simulated_annealing \
 extremal_optimization harmony_search cultural_algorithm \
 memetic_algorithm population-based_incremental_learning \
 univariate_marginal_distribution_algorithm \
-compact_genetic_algorithm
+compact_genetic_algorithm bayesian_optimization_algorithm
 
 all: $(BIN)
 
@@ -82,6 +82,9 @@ univariate_marginal_distribution_algorithm:univariate_marginal_distribution_algo
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 compact_genetic_algorithm:compact_genetic_algorithm.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+bayesian_optimization_algorithm:bayesian_optimization_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
