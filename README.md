@@ -48,7 +48,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 - [x] Univariate Marginal Distribution Algorithm
 - [x] Compact Genetic Algorithm
 - [x] Bayesian Optimization Algorithm
-- [ ] Cross-Entropy Method
+- [x] Cross-Entropy Method
 
 ### Swarm Algorithms
 
