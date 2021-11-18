@@ -52,7 +52,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ### Swarm Algorithms
 
-- [ ] Particle Swarm Optimization
+- [x] Particle Swarm Optimization
 - [ ] Ant System
 - [ ] Ant Colony System
 - [ ] Bees Algorithm
