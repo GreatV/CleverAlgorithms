@@ -13,6 +13,7 @@ memetic_algorithm population-based_incremental_learning \
 univariate_marginal_distribution_algorithm \
 compact_genetic_algorithm bayesian_optimization_algorithm \
 cross-entropy_method particle_swarm_optimization \
+ant_system
 
 all: $(BIN)
 
@@ -92,6 +93,9 @@ cross-entropy_method:cross-entropy_method.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 particle_swarm_optimization:particle_swarm_optimization.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+ant_system:ant_system.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
