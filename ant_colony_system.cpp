@@ -8,7 +8,7 @@
 std::random_device rd;
 std::mt19937 generator(rd());
 std::uniform_real_distribution<> distribution(0.0, 1.0);
-auto random = []() { return distribution(generator); };
+auto random_double = []() { return distribution(generator); };
 
 using prob_info = struct prob_info_t
 {
@@ -60,7 +60,7 @@ void random_permutation(std::vector<size_t>& permutation,
 	}
 	for (size_t i = 0; i < permutation.size(); ++i)
 	{
-		const auto r = static_cast<size_t>(random() * (permutation.size() - i)) + i;
+		const auto r = static_cast<size_t>(random_double() * (permutation.size() - i)) + i;
 		std::swap(permutation[i], permutation[r]);
 	}
 }
@@ -115,10 +115,10 @@ size_t prob_selection(const std::vector<prob_info>& choices)
 	}
 	if (sum == 0.0)
 	{
-		const auto random_index = static_cast<size_t>(random() * (choices.size() - 1));
+		const auto random_index = static_cast<size_t>(random_double() * (choices.size() - 1));
 		return choices[random_index].city;
 	}
-	double v = random();
+	double v = random_double();
 	for (const auto& choice : choices)
 	{
 		v -= choice.probability / sum;
@@ -152,13 +152,13 @@ void stepwise_const(std::vector<size_t>& permutation,
                     const double c_greed)
 {
 	permutation.clear();
-	const auto random_index = static_cast<size_t>(random() * (cities.size() - 1));
+	const auto random_index = static_cast<size_t>(random_double() * (cities.size() - 1));
 	permutation.push_back(random_index);
 	while (permutation.size() < cities.size())
 	{
 		std::vector<prob_info> choices;
 		calculate_choices(choices, cities, permutation.back(), permutation, pheromone, c_heuristic, c_greed);
-		const auto greedy = random() < c_greed;
+		const auto greedy = random_double() < c_greed;
 		auto next_city = greedy ? greedy_select(choices) : prob_selection(choices);
 		permutation.push_back(next_city);
 	}
