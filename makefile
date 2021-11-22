@@ -13,7 +13,7 @@ memetic_algorithm population-based_incremental_learning \
 univariate_marginal_distribution_algorithm \
 compact_genetic_algorithm bayesian_optimization_algorithm \
 cross-entropy_method particle_swarm_optimization \
-ant_system ant_colony_system
+ant_system ant_colony_system bees_algorithm \
 
 all: $(BIN)
 
@@ -99,6 +99,9 @@ ant_system:ant_system.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 ant_colony_system:ant_colony_system.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+bees_algorithm:bees_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
