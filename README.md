@@ -56,7 +56,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 - [x] Ant System
 - [x] Ant Colony System
 - [x] Bees Algorithm
-- [ ] Bacterial Foraging Optimization Algorithm
+- [x] Bacterial Foraging Optimization Algorithm
 
 ### Immune Algorithms
 
