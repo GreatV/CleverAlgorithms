@@ -60,7 +60,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ### Immune Algorithms
 
-- [ ] Clonal Selection Algorithm
+- [x] Clonal Selection Algorithm
 - [ ] Negative Selection Algorithm
 - [ ] Artificial Immune Recognition System
 - [ ] Immune Network Algorithm
