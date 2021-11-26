@@ -15,6 +15,7 @@ compact_genetic_algorithm bayesian_optimization_algorithm \
 cross-entropy_method particle_swarm_optimization \
 ant_system ant_colony_system bees_algorithm \
 bacterial_foraging_optimization clonal_selection_algorithm \
+negative_selection_algorithm
 
 all: $(BIN)
 
@@ -109,6 +110,9 @@ bacterial_foraging_optimization:bacterial_foraging_optimization.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clonal_selection_algorithm:clonal_selection_algorithm.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+negative_selection_algorithm:negative_selection_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
