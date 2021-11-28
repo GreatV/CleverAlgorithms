@@ -62,7 +62,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 - [x] Clonal Selection Algorithm
 - [x] Negative Selection Algorithm
-- [ ] Artificial Immune Recognition System
+- [x] Artificial Immune Recognition System
 - [ ] Immune Network Algorithm
 - [ ] Dendritic Cell Algorithm
 

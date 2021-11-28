@@ -15,7 +15,7 @@ compact_genetic_algorithm bayesian_optimization_algorithm \
 cross-entropy_method particle_swarm_optimization \
 ant_system ant_colony_system bees_algorithm \
 bacterial_foraging_optimization clonal_selection_algorithm \
-negative_selection_algorithm
+negative_selection_algorithm artificial_immune_recognition_system \
 
 all: $(BIN)
 
@@ -113,6 +113,9 @@ clonal_selection_algorithm:clonal_selection_algorithm.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 negative_selection_algorithm:negative_selection_algorithm.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+artificial_immune_recognition_system:artificial_immune_recognition_system.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
