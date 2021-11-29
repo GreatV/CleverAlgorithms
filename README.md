@@ -80,7 +80,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![ackley functions](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/ackley_functions.png)
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)=-a e^{ -b \sqrt{ \frac1d \sum\limits_{i=1}^d {x_i^2} } } -e^{ \frac1d \sum\limits_{i=1}^d {cos(cx_i)} } + a + e" />
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)=-a%20e^{%20-b%20\sqrt{%20\frac1d%20\sum\limits_{i=1}^d%20{x_i^2}%20}%20}%20-e^{%20\frac1d%20\sum\limits_{i=1}^d%20{cos(cx_i)}%20}%20+%20a%20+%20e)
 
 ## How to build the source code
 
