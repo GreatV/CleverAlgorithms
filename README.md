@@ -74,6 +74,14 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 - [ ] Learning Vector Quantization
 - [ ] Self-Organizing Map
 
+## Test Functions
+
+### ACKLEY FUNCTION
+
+![ackley functions](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/ackley_functions.png)
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)=-a e^{ -b \sqrt{ \frac1d \sum\limits_{i=1}^d {x_i^2} } } -e^{ \frac1d \sum\limits_{i=1}^d {cos(cx_i)} } + a + e" />
+
 ## How to build the source code
 
 ```bash
