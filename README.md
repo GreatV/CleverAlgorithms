@@ -84,7 +84,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ### BUKIN FUNCTION N.6
 
-![bukin function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/bukin_functions.png)
+![bukin function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/bukin_function.png)
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20100%20\sqrt{|x_2%20-%200.01x_1^2|}%20+%200.01|x_1%20+%2010|)
 
