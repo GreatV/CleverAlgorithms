@@ -88,6 +88,12 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20100%20\sqrt{|x_2%20-%200.01x_1^2|}%20+%200.01|x_1%20+%2010|)
 
+### CROSS-IN-TRAY FUNCTION
+
+![cross-in-tray function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/cross_in_tray_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-0.0001(|sin(x_1)sin(x_2)e^{|100%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|%20+%201)^{0.1})
+
 ## How to build the source code
 
 ```bash
