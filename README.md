@@ -106,4 +106,4 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 gcc -g -Wall -std=c++11 <algorithm>.cpp -lstdc++ -o <algorithm>
 ```
 
-https://user-images.githubusercontent.com/17264618/140650676-01246c41-db54-4f3d-b5df-2b008d42c4aa.mp4
+[![asciicast](https://asciinema.org/a/zwweRbdZSJUDAJEGfuBSKsrHW.svg)](https://asciinema.org/a/zwweRbdZSJUDAJEGfuBSKsrHW)
