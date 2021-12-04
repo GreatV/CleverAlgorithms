@@ -96,7 +96,7 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ### EGGHOLDER FUNCTION
 
-![egg holder function](ttps://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/eggholder_function.png)
+![egg holder function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/eggholder_function.png)
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-%20(x_2%20+%2047)%20sin(\sqrt{|x_2%20+%20\frac{x_1}{2}%20+%2047|})%20-%20x_1%20sin(\sqrt{|x_1%20-%20(x_2%20+%2047)|}))
 
