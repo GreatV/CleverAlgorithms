@@ -100,6 +100,12 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-%20(x_2%20+%2047)%20sin(\sqrt{|x_2%20+%20\frac{x_1}{2}%20+%2047|})%20-%20x_1%20sin(\sqrt{|x_1%20-%20(x_2%20+%2047)|}))
 
+### Gramacy & Lee Function
+
+![gramacy & lee function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/gramacy_lee_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\frac{sin(10\pi%20x)}{2x}%20+%20(x%20-%201)^4)
+
 ## How to build the source code
 
 ```bash
