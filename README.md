@@ -116,6 +116,12 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i%20=%201}^d%20\frac{x_i^2}{4000}%20-%20\prod\limits_{i%20=%201}^d%20cos(\frac{x_i}{\sqrt{i}})%20+%201)
 
+### Holder Table Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/HOLDER_TABLE_FUNCTION.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-|sin(x_1)%20cos(x_2)%20e^{|1%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|)
+
 ## How to build the source code
 
 ```bash
