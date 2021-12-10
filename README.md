@@ -122,6 +122,14 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-|sin(x_1)%20cos(x_2)%20e^{|1%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|)
 
+### Levy Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/levy_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20sin^2(\pi%20w_1)+%20\sum\limits_{i%20=%201}^{d%20-%201}{(w_i%20-%201)^2}%20\[%201%20+%2010%20sin^2(\pi%20w_i%20+%201)\]%20+%20(w_d%20-%201)^2%20\[1%20+%20sin^2(2%20\pi%20*%20w_d)\])
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;w_i%20=%201%20+%20\frac{x_i%20-%201}{4},%20\text{for%20all%20$i%20=%201,%20...,%20d$})
+
 ## How to build the source code
 
 ```bash
