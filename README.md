@@ -130,6 +130,12 @@ The C++ implementation of [Clever Algorithms](https://github.com/clever-algorith
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;w_i%20=%201%20+%20\frac{x_i%20-%201}{4},%20\text{for%20all%20$i%20=%201,%20...,%20d$})
 
+### Levy Function N. 13
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/levy_function_n_13.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20sin^2(3%20\pi%20x_1)%20+%20(x_1%20-%201)^2%20\[1%20+%20sin^2(3%20\pi%20x_2)\]%20+%20(x_2%20-%201)^2%20\[%201%20+%20sin^2(2%20\pi%20x_2)\])
+
 ## How to build the source code
 
 ```bash
