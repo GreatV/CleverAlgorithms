@@ -157,3 +157,9 @@ gcc -g -Wall -std=c++11 <algorithm>.cpp -lstdc++ -o <algorithm>
 ```
 
 [![asciicast](https://asciinema.org/a/zwweRbdZSJUDAJEGfuBSKsrHW.svg)](https://asciinema.org/a/zwweRbdZSJUDAJEGfuBSKsrHW)
+
+## Thanks
+
+This project has been supported by JetBrains Free License Programs - Licenses for Open Source Development. Thanks JetBrains!
+
+[![JetBrains](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)]( https://jb.gg/OpenSourceSupport)
