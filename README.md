@@ -150,6 +150,22 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%2010d%20+%20\sum\limits_{i=1}^d{x_i^2%20-%2010%20cos%20(2%20\pi%20x_i)})
 
+### Schaffer Function N. 2
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schaffer_function_n_2_100.png)
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schaffer_function_n_2_2.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%200.5%20+%20\frac{sin^2(x_1^2%20-%20x_2^2)%20-%200.5}{\[%201%20+%200.001%20(x_1^2%20+%20x_2^2)\]^2})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-100, 100] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0)">
+
 ## How to build the source code
 
 ```bash
