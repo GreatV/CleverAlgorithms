@@ -166,6 +166,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0)">
 
+### Schaffer Function N. 4
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schaffer_function_n_4_100.png)
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schaffer_function_n_4_2.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)=0.5+\frac{cos^2(sin(|x_1^2%20-%20x_2^2|))%20-%200.5}{\[1%20+%200.001%20(x_1^2%20+%20x_2^2)\]^2})
+
 ## How to build the source code
 
 ```bash
