@@ -174,6 +174,21 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)=0.5+\frac{cos^2(sin(|x_1^2%20-%20x_2^2|))%20-%200.5}{\[1%20+%200.001%20(x_1^2%20+%20x_2^2)\]^2})
 
+
+### Schwefel Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schwefel_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20418.9829d%20-%20\sum\limits_{i=1}^d%20x_i%20sin(\sqrt{|x_i|}))
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-500, 500] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (420.9687,..., 420.9687)">
+
 ## How to build the source code
 
 ```bash
