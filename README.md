@@ -189,6 +189,15 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (420.9687,..., 420.9687)">
 
+
+### Shubert Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/shubert_function.png)
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/shubert_function_2.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\big(%20\sum\limits_{i=1}^5%20{i%20cos((i%20+%201)%20x_1%20+%20i)}%20\big)%20%20\big(\sum\limits_{i=1}^5%20{i%20cos((i%20+%201)%20x_2%20+%20i)}%20\big))
+
 ## How to build the source code
 
 ```bash
