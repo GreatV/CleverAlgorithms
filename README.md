@@ -198,6 +198,28 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\big(%20\sum\limits_{i=1}^5%20{i%20cos((i%20+%201)%20x_1%20+%20i)}%20\big)%20%20\big(\sum\limits_{i=1}^5%20{i%20cos((i%20+%201)%20x_2%20+%20i)}%20\big))
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-5.12, 5.12] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = -186.7309">
+
+### Bohachevsky Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/bohackevsky_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20x_1^2%20+%202x_2^2%20-%200.3cos(3%20\pi%20x_1)%20-%200.4cos(4%20\pi%20x_2)%20+%200.7)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-100, 100] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0)">
+
 ## How to build the source code
 
 ```bash
