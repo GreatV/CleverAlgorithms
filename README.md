@@ -220,6 +220,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0)">
 
+### Perm Function 0, D, Beta
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/perm_function_0_D_beta.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{\big(%20\sum\limits_{j=1}^d{(j%20+%20\beta)%20(x_j^i%20-%20\frac{1}{j^i})}%20\big)^2})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-d, d] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (1, \frac{1}{2}, ..., \frac{1}{d})">
+
 ## How to build the source code
 
 ```bash
