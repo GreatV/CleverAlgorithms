@@ -252,7 +252,7 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/sphere_function.png)
 
-![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{x_i^2}})
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{x_i^2})
 
 **Input Domain:**
 
