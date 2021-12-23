@@ -262,6 +262,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0, ..., 0)">
 
+### Sum of Different Powers Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/SUM_OF_DIFFERENT_POWERS_FUNCTION.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{|x_i|^{i+1}})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-1, 1] \text{for all} i = 1, 2, ..., d">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0, ..., 0)">
+
 ## How to build the source code
 
 ```bash
