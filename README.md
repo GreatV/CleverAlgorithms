@@ -280,7 +280,7 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/SUM_SQUARES_FUNCTION.png)
 
-![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{i x_i^{2}})
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d%20{i%20x_i^2})
 
 **Input Domain:**
 
