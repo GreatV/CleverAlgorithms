@@ -290,6 +290,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0, ..., 0)">
 
+### TRID FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/trid_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d%20{(x_i%20-1)^2}%20-%20\sum\limits_{i=2}^d%20{x_i%20x_{i-1}})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-d^2, d^2] \text{for all} i = 1, 2, ..., d">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = -d(d+4)(d-1)/6, \text{at} x_i = i(d + 1 -i) \text{for all } i=1,2,...,d">
+
 ## How to build the source code
 
 ```bash
