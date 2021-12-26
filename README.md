@@ -304,6 +304,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = -d(d+4)(d-1)/6, \text{at} x_i = i(d + 1 -i) \text{for all } i=1,2,...,d">
 
+### BOOTH FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/booth_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20(x_1%20+%202x_2%20-%207)^2%20+%20(2x_1%20+%20x_2%20-%205)^2)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]%20\text{for%20all}%20i%20=%201,%202">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,%203)">
+
 ## How to build the source code
 
 ```bash
