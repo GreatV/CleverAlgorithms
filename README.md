@@ -318,6 +318,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,%203)">
 
+### BATYAS FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/matyas_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%200.26(x_1^2%20+%20x_2^2)%20-%200.48x_1%20x_2)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]%20\text{for%20all}%20i%20=%201,%202">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,%200)">
+
 ## How to build the source code
 
 ```bash
