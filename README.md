@@ -332,6 +332,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,%200)">
 
+### MCCORMICK FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/mccormick_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20sin(x_1%20+%20x_2)%20+%20(x_1%20-%20x_2)^2%20-%201.5x_1%20+%202.5x_2%20+%201)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-1.5,%204]%20,x_2 \in [-3, 4]">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1.9133,%20\text{at}%20x^{*}%20=%20(-0.54719,%20-1.54719)">
+
 ## How to build the source code
 
 ```bash
