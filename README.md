@@ -346,6 +346,16 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1.9133,%20\text{at}%20x^{*}%20=%20(-0.54719,%20-1.54719)">
 
+### POWER OF SUM FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/power_of_sum.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{[(\sum\limits_{j=1}^d{x_j^i})%20-%20b_i]^2})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[0,%20d]\,\text{for%20all}\,i=1,...,d">.
+
 ## How to build the source code
 
 ```bash
