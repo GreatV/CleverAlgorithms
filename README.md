@@ -356,6 +356,21 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[0,%20d]\,\text{for%20all}\,i=1,...,d">.
 
+### ZAKHAROV FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/zakharov_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^d{x_i^2}%20+%20(\sum\limits_{i=1}^d{0.5%20i%20x_i})^2%20+%20(\sum\limits_{i=1}^d%20{0.5%20i%20x_i})^4)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-5,%2010]%20,\text{at%20all}%20i%20=%201,%20...,%20d">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,...,%200)">
+
+
 ## How to build the source code
 
 ```bash
