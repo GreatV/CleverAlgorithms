@@ -370,6 +370,21 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,...,%200)">
 
+### THREE-HUMP CAMEL FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/three_hump_camel_function.png)
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/three_hump_camel_function_2.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%202x_1^2%20-%201.05x_1^4%20+%20x_1^6/6%20+%20x_1x_2%20+%20x_2^2)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-5,%205]%20,\text{at%20all}%20i%20=%201,%202">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,%200)">
 
 ## How to build the source code
 
