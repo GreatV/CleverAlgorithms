@@ -386,6 +386,22 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,%200)">
 
+### SIX-HUMP CAMEL FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/six_hump_camel_function.png)
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/six_hump_camel_function_2.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\bigl%20(%204%20-%202.1x_1^2%20+%20x_1^4/3%20\bigr%20)x_1^2%20+%20x_1x_2%20+%20(-4%20+%204x_2^2)x_2^2)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-3,%203]%20,%20x_2%20\in%20[-2,%202]">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1.0316,\text{at%20}%20x^{*}%20=%20(0.0898,%20-0.7126)%20\text{and}%20(-0.0898,%200.7126)">
+
 ## How to build the source code
 
 ```bash
