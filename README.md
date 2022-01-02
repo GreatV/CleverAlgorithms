@@ -402,6 +402,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1.0316,\text{at%20}%20x^{*}%20=%20(0.0898,%20-0.7126)%20\text{and}%20(-0.0898,%200.7126)">
 
+### Dixon-Price FUNCTION
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/dixon_price_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20(x_1%20-%201)^2%20+%20\sum\limits_{i=2}^d%20{i%20(2%20x_i^2%20-%20x_{i-1})^2})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010],%20\text{for%20all%20}%20i%20=%201,%20...,%20d">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x_i%20=%202^{-\frac{2^i-2}{2^i}},\text{for}%20i=1,...,d">
+
 ## How to build the source code
 
 ```bash
