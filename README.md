@@ -421,7 +421,7 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/rosenbrock_function.png)
 
-![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^{d-1}[100%20(x_{i+1}%20-%20x_i^2)^2%20+%20(x_i%20-%201)^2])
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-cos(x_1)cos(x_2)exp(-(x_1%20-%20\pi)^2%20-%20(x_2%20-%20\pi)^2%20))
 
 **Input Domain:**
 
@@ -430,6 +430,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 **Global Minimum:**
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x_i%20=%20(1,...,1),\text{for}%20i=1,...,d">
+
+### Easom Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/easom_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i=1}^{d-1}[100%20(x_{i+1}%20-%20x_i^2)^2%20+%20(x_i%20-%201)^2])
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-100,%20100],%20\text{for%20all%20}%20i%20=%201,%202">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1,%20\text{at}%20X^{*}%20=%20(\pi,\pi)">
 
 ## How to build the source code
 
