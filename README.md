@@ -445,6 +445,24 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1,%20\text{at}%20X^{*}%20=%20(\pi,\pi)">
 
+### Michalewicz Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/michalewicz_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-%20\sum\limits_{i=1}^d%20sin(x_i)sin^{2m}%20(\frac{i%20x_i^2}{\pi}))
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[0,%20\pi],%20\text{for%20all%20}%20i%20=%201,%202,...,d">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%202:%20f(x^{*})%20=%20-1.8013,%20\text{at}%20X^{*}%20=%20(2.20,1.57)">
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%205:%20f(x^{*})%20=%20-4.687658">
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%2010:%20f(x^{*})%20=%20-9.66015">
+
 ## How to build the source code
 
 ```bash
