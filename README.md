@@ -463,6 +463,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%2010:%20f(x^{*})%20=%20-9.66015">
 
+### Beale Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/beale_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20(1.5%20-%20x_1%20+%20x_1x_2)^2%20+%20(2.25%20-%20x_1%20+%20x_1x_2^2)^2%20+%20(2.625%20-%20x_1%20+%20x_1%20x_2^3)^2)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-4.5,%204.5],%20\text{for%20all%20}%20i%20=%201,%202">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%202:%20f(x^{*})%20=%200,%20\text{at}%20X^{*}%20=%20(3,0.5)">
+
 ## How to build the source code
 
 ```bash
