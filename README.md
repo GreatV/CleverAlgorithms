@@ -477,6 +477,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=\text{at%20}d%20=%202:%20f(x^{*})%20=%200,%20\text{at}%20X^{*}%20=%20(3,0.5)">
 
+### Branin Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/branin_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20a(x_2%20-%20b%20x_1%20+%20c%20x_1%20-%20r)^2%20+%20s(1%20-%20t)cos(x_1)%20+%20s)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-5,%2010],%20x_2%20\in%20[0,%2015]">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-0.397887,%20\text{at}%20x^{*}%20=%20(\pi,12.275),(\pi,2.275)\text{and}(9.42478,2.475)">
+
 ## How to build the source code
 
 ```bash
