@@ -491,6 +491,18 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-0.397887,%20\text{at}%20x^{*}%20=%20(\pi,12.275),(\pi,2.275)\text{and}(9.42478,2.475)">
 
+### COLVILLE FUNCTION
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20100(x_1^2%20-%20x_2)^2%20+%20(x_1%20-%201)^2%20+%20(x_3%20-1)^2%20+%2090(x_3^2%20-%20x_4)^2%20+%2010.1((x_2%20-%201)^2%20+%20(x_4%20-1)^2)%20+%2019.8(x_2%20-1)(x_4%20-1))
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-10,%2010],\text{for%20all%20}%20i%20=%201,%202,%203,%204">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,1,1,1)">
+
 ## How to build the source code
 
 ```bash
