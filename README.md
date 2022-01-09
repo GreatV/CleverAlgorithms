@@ -503,6 +503,16 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 <img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,1,1,1)">
 
+### Forrester et al. (2008) Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/forrester_08.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20(6x-2)^2%20sin(12x%20-%204))
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[0,%201]">.
+
 ## How to build the source code
 
 ```bash
