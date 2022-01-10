@@ -513,6 +513,20 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[0,%201]">.
 
+### Goldstein-Price Function
+
+![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/goldstein_price_function.png)
+
+![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20[1%20+%20(x_1%20+%20x_2%20+%201)^2%20(19%20-%2014x_1%20+%203x_1^2%20-%2014x_2%20+%206x_1x_2%20+%203x_2^2)]\times[30%20+%20(2x_1%20-%203x_2)^2%20(18%20-%2032x_1%20+%2012x_1^2%20+%2048x_2%20-36x_1x_2%20+%2027x_2^2)])
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-2,%202],\text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%203,%20\text{at}%20x^{*}%20=%20(0,-1)">
+
 ## How to build the source code
 
 ```bash
