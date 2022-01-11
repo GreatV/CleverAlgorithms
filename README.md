@@ -98,7 +98,7 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 **Input Domain:**
 
-The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-15,%20-5],x_2\in[-3,3]">.
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-15,%205],x_2\in[-3,3]">.
 
 **Global Minimum:**
 
