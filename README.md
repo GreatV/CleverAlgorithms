@@ -96,6 +96,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20100%20\sqrt{|x_2%20-%200.01x_1^2|}%20+%200.01|x_1%20+%2010|)
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_1%20\in%20[-15,%20-5],x_2\in[-3,3]">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(-10,%201))
+
 ### CROSS-IN-TRAY FUNCTION
 
 ![cross-in-tray function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/cross_in_tray_function.png)
