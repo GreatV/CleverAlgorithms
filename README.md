@@ -110,6 +110,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-0.0001(|sin(x_1)sin(x_2)e^{|100%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|%20+%201)^{0.1})
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-2.06261,%20\text{at}%20x^{*}%20=%20(1.3491,%20-1.3491),(1.3491,%201.3491),(-1.3491,%201.3491),\text{and}(-1.3491,%20-1.3491))
+
 ### EGGHOLDER FUNCTION
 
 ![egg holder function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/eggholder_function.png)
