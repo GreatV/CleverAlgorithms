@@ -132,7 +132,7 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 **Global Minimum:**
 
-![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1.06261,%20\text{at}%20x^{*}%20=%20(0,%200))
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-1,%20\text{at}%20x^{*}%20=%20(0,%200))
 
 ### EGGHOLDER FUNCTION
 
