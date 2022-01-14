@@ -140,6 +140,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-%20(x_2%20+%2047)%20sin(\sqrt{|x_2%20+%20\frac{x_1}{2}%20+%2047|})%20-%20x_1%20sin(\sqrt{|x_1%20-%20(x_2%20+%2047)|}))
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-512,%20512]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-959.6407,%20\text{at}%20x^{*}%20=%20(512,%20404.2319))
+
 ### Gramacy & Lee Function
 
 ![gramacy & lee function](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/gramacy_lee_function.png)
