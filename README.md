@@ -154,6 +154,10 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\frac{sin(10\pi%20x)}{2x}%20+%20(x%20-%201)^4)
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x%20\in%20[0.5,%202.5]">.
+
 ### Griewank Function
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/griewank_function_600.png)
