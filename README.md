@@ -182,6 +182,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-|sin(x_1)%20cos(x_2)%20e^{|1%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|)
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-19.2085,%20\text{at}%20x^{*}%20=%20(8.05502,%209.66459),(8.05502,%20-9.66459),(-8.05502,%209.66459),(-8.05502,%20-9.66459))
+
 ### Levy Function
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/levy_function.png)
