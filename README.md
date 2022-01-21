@@ -212,6 +212,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20sin^2(3%20\pi%20x_1)%20+%20(x_1%20-%201)^2%20\[1%20+%20sin^2(3%20\pi%20x_2)\]%20+%20(x_2%20-%201)^2%20\[%201%20+%20sin^2(2%20\pi%20x_2)\])
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,%201))
+
 ### Rastrigin Function
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/rastrigin_function.png)
