@@ -226,6 +226,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%2010d%20+%20\sum\limits_{i=1}^d{x_i^2%20-%2010%20cos%20(2%20\pi%20x_i)})
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-5.12,%205.12]\text{for%20all}i=1,...,%20d">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,...,%200))
+
 ### Schaffer Function N. 2
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/schaffer_function_n_2_100.png)
