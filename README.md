@@ -1,5 +1,7 @@
 # CleverAlgorithms
 
+[![HitCount](https://hits.dwyl.com/greatv/CleverAlgorithms.svg?style=flat)](https://hits.dwyl.com/greatv/CleverAlgorithms)
+
 The C++ implementation of [Clever Algorithms](https://github.com/clever-algorithms/CleverAlgorithms).
 
 ## Overview
