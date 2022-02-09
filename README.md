@@ -1,5 +1,7 @@
 # CleverAlgorithms
 
+[![HitCount](https://hits.dwyl.com/greatv/CleverAlgorithms.svg?style=flat)](https://hits.dwyl.com/greatv/CleverAlgorithms)
+
 The C++ implementation of [Clever Algorithms](https://github.com/clever-algorithms/CleverAlgorithms).
 
 ## Overview
@@ -168,11 +170,27 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20\sum\limits_{i%20=%201}^d%20\frac{x_i^2}{4000}%20-%20\prod\limits_{i%20=%201}^d%20cos(\frac{x_i}{\sqrt{i}})%20+%201)
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-600,%20600]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,...,%200))
+
 ### Holder Table Function
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/HOLDER_TABLE_FUNCTION.png)
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20-|sin(x_1)%20cos(x_2)%20e^{|1%20-%20\frac{\sqrt{x_1^2%20+%20x_2^2}}{\pi}|}|)
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%20-19.2085,%20\text{at}%20x^{*}%20=%20(8.05502,%209.66459),(8.05502,%20-9.66459),(-8.05502,%209.66459),(-8.05502,%20-9.66459))
 
 ### Levy Function
 
@@ -182,17 +200,41 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;w_i%20=%201%20+%20\frac{x_i%20-%201}{4},%20\text{for%20all%20$i%20=%201,%20...,%20d$})
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,...,%201))
+
 ### Levy Function N. 13
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/levy_function_n_13.png)
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%20sin^2(3%20\pi%20x_1)%20+%20(x_1%20-%201)^2%20\[1%20+%20sin^2(3%20\pi%20x_2)\]%20+%20(x_2%20-%201)^2%20\[%201%20+%20sin^2(2%20\pi%20x_2)\])
 
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-10,%2010]\text{for%20all}i=1,%202">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(1,%201))
+
 ### Rastrigin Function
 
 ![](https://github.com/GreatV/CleverAlgorithms/raw/main/docs/figures/rastrigin_function.png)
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)%20=%2010d%20+%20\sum\limits_{i=1}^d{x_i^2%20-%2010%20cos%20(2%20\pi%20x_i)})
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i%20\in%20[-5.12,%205.12]\text{for%20all}i=1,...,%20d">.
+
+**Global Minimum:**
+
+![](https://render.githubusercontent.com/render/math?math=f(x^{*})%20=%200,%20\text{at}%20x^{*}%20=%20(0,...,%200))
 
 ### Schaffer Function N. 2
 
@@ -218,6 +260,14 @@ The function is usually evaluated on the <img src="https://render.githubusercont
 
 ![](https://latex.codecogs.com/svg.latex?\Large&space;f(x)=0.5+\frac{cos^2(sin(|x_1^2%20-%20x_2^2|))%20-%200.5}{\[1%20+%200.001%20(x_1^2%20+%20x_2^2)\]^2})
 
+
+**Input Domain:**
+
+The function is usually evaluated on the <img src="https://render.githubusercontent.com/render/math?math=x_i \in [-100, 100] \text{for all} i = 1, 2">.
+
+**Global Minimum:**
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x^{*}) = 0, \text{at} x^{*} = (0, 0)">
 
 ### Schwefel Function
 
