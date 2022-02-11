@@ -23,3 +23,20 @@ double ackley(const double* x, const int n)
 	}
 	return -20.0 * exp(-0.2 * sqrt(s1 / n)) - exp(s2 / n) + 20.0 + M_E;
 }
+
+
+/**
+ * \brief Beale function
+ *
+ * a two-dimensional function, The global minimum is 0
+ * at (3, 0.5).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double beale(const double* x, const int n)
+{
+	return pow(1.5 - x[0] + x[0] * x[1], 2) +
+		pow(2.25 - x[0] + x[0] * x[1] * x[1], 2) +
+		pow(2.625 - x[0] + x[0] * pow(x[1], 3), 2);
+}
