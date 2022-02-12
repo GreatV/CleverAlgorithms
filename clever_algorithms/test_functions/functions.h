@@ -22,4 +22,15 @@ double ackley(const double* x, const int n);
  * \return computed result
  */
 double beale(const double* x, const int n);
+
+/**
+ * \brief Bohachevsky function
+ *
+ * A two-dimensional function, The global minimum is 0
+ * at (0, 0).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double bohachevsky(const double* x, const int n);
 #endif
