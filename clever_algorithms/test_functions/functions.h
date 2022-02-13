@@ -33,4 +33,15 @@ double beale(const double* x, const int n);
  * \return computed result
  */
 double bohachevsky(const double* x, const int n);
+
+/**
+ * \brief Booth function
+ *
+ * A two-dimensional function, The global minimum is 0
+ * at (1, 3).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double booth(const double* x, const int n);
 #endif

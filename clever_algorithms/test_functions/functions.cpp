@@ -56,3 +56,19 @@ double bohachevsky(const double* x, const int n)
 	return x[0] * x[0] + 2.0 * x[1] * x[1] - 0.3 * cos(3.0 * M_PI * x[0]) -
 		0.4 * cos(4.0 * M_PI * x[1]) + 0.7;
 }
+
+
+/**
+ * \brief Booth function
+ *
+ * A two-dimensional function, The global minimum is 0
+ * at (1, 3).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double booth(const double* x, const int n)
+{
+	return pow(x[0] + 2 * x[1] - 7, 2) +
+		pow(2 * x[0] + x[1] - 5, 2);
+}
