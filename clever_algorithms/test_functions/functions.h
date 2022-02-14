@@ -44,4 +44,15 @@ double bohachevsky(const double* x, const int n);
  * \return computed result
  */
 double booth(const double* x, const int n);
+
+/**
+ * \brief Box-Betts function
+ *
+ * A three-dimensional function. The global minimum is 0
+ * at (1, 10, 1).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double box_betts(const double* x, const int n);
 #endif

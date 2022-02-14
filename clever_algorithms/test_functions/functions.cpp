@@ -72,3 +72,25 @@ double booth(const double* x, const int n)
 	return pow(x[0] + 2 * x[1] - 7, 2) +
 		pow(2 * x[0] + x[1] - 5, 2);
 }
+
+
+/**
+ * \brief Box-Betts function
+ *
+ * A three-dimensional function. The global minimum is 0
+ * at (1, 10, 1).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double box_betts(const double* x, const int n)
+{
+	const double x0 = x[0];
+	const double x1 = x[1];
+	const double x2 = x[2];
+	double sum = 0.0;
+	for (int i = 1; i <= 10; i++)
+		sum += pow(exp(-0.1 * i * x0) - exp(-0.1 * i * x1) -
+		           (exp(-0.1 * i) - exp(-1.0 * i)) * x2, 2.0);
+	return sum;
+}
