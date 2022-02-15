@@ -94,3 +94,19 @@ double box_betts(const double* x, const int n)
 		           (exp(-0.1 * i) - exp(-1.0 * i)) * x2, 2.0);
 	return sum;
 }
+
+/**
+ * \brief Branin function
+ *
+ * It has a global minimum function value of 0.398
+ * at the points (−3.142, 12.275), (3.142, 2.275) and (9.425, 2.425).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double branin(const double* x, const int n)
+{
+	const double x0 = x[0];
+	const double s = x[1] - (5.1 / (4.0 * M_PI * M_PI) * x0 - 5.0 / M_PI) * x0 - 6.0;
+	return s * s + 10 * (1.0 - 1.0 / (8.0 * M_PI)) * cos(x0) + 10.0;
+}

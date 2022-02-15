@@ -55,4 +55,15 @@ double booth(const double* x, const int n);
  * \return computed result
  */
 double box_betts(const double* x, const int n);
+
+/**
+ * \brief Branin function
+ *
+ * It has a global minimum function value of 0.398
+ * at the points (−3.142, 12.275), (3.142, 2.275) and (9.425, 2.425).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double branin(const double* x, const int n);
 #endif
