@@ -110,3 +110,20 @@ double branin(const double* x, const int n)
 	const double s = x[1] - (5.1 / (4.0 * M_PI * M_PI) * x0 - 5.0 / M_PI) * x0 - 6.0;
 	return s * s + 10 * (1.0 - 1.0 / (8.0 * M_PI)) * cos(x0) + 10.0;
 }
+
+
+/**
+ * \brief Camel function
+ * A two-dimensional function, The global minimum is 0
+ * at (0, 0).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double camel3(const double* x, const int n)
+{
+	const double x02 = x[0] * x[0];
+	const double x04 = x02 * x02;
+	const double x06 = x04 * x02;
+	return 2 * x02 - 1.05 * x04 + x06 / 6.0 + x[0] * x[1] * x[1] * x[1];
+}

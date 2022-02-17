@@ -66,4 +66,14 @@ double box_betts(const double* x, const int n);
  * \return computed result
  */
 double branin(const double* x, const int n);
+
+/**
+ * \brief Camel function
+ * A two-dimensional function, The global minimum is 0
+ * at (0, 0).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double camel3(const double* x, const int n);
 #endif
