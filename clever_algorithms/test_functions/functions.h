@@ -76,4 +76,14 @@ double branin(const double* x, const int n);
  * \return computed result
  */
 double camel3(const double* x, const int n);
+
+/**
+ * \brief Chichinadze function
+ * A two-dimensional function, The global minimum is 43.3159
+ * at  (5.90133, 0.5).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double chichinadze(const double* x, const int n);
 #endif

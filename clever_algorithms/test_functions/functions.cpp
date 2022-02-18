@@ -127,3 +127,19 @@ double camel3(const double* x, const int n)
 	const double x06 = x04 * x02;
 	return 2 * x02 - 1.05 * x04 + x06 / 6.0 + x[0] * x[1] * x[1] * x[1];
 }
+
+
+/**
+ * \brief Chichinadze function
+ * A two-dimensional function, The global minimum is 43.3159
+ * at  (5.90133, 0.5).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double chichinadze(const double* x, const int n)
+{
+	return x[0] * x[0] - 12 * x[0] + 11 + 10 * cos(M_PI / 2.0 * x[0])
+		+ 8 * sin(5 * M_PI * x[0])
+		- exp(-(x[1] - 0.5) * 0.5) / sqrt(5.0);
+}
