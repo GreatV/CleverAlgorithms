@@ -86,4 +86,13 @@ double camel3(const double* x, const int n);
  * \return computed result
  */
 double chichinadze(const double* x, const int n);
+
+/**
+ * \brief Cola function
+ * A 17-dimensional function, The global minimum is 11.7464.
+ * \param x input var
+ * \param n dimension, n = 17
+ * \return computed result
+ */
+double cola(const double* x, const int n)
 #endif

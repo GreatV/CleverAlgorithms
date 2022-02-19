@@ -143,3 +143,43 @@ double chichinadze(const double* x, const int n)
 		+ 8 * sin(5 * M_PI * x[0])
 		- exp(-(x[1] - 0.5) * 0.5) / sqrt(5.0);
 }
+
+
+static double dis[] = {
+	1.27,
+	1.69, 1.43,
+	2.04, 2.35, 2.43,
+	3.09, 3.18, 3.26, 2.85,
+	3.20, 3.22, 3.27, 2.88, 1.55,
+	2.86, 2.56, 2.58, 2.59, 3.12, 3.06,
+	3.17, 3.18, 3.18, 3.12, 1.31, 1.64, 3.00,
+	3.21, 3.18, 3.18, 3.17, 1.70, 1.36, 2.95, 1.32,
+	2.38, 2.31, 2.42, 1.94, 2.85, 2.81, 2.56, 2.91, 2.97
+};
+
+/**
+ * \brief Cola function
+ * A 17-dimensional function, The global minimum is 11.7464.
+ * \param x input var
+ * \param n dimension, n = 17
+ * \return computed result
+ */
+double cola(const double* x, const int n)
+{
+	double sum = 0.0;
+	int i;
+	int k = 1;
+	double mt[20] = {0, 0, 0, 0};
+	for (i = 4; i < 20; i++)
+		mt[i] = x[i - 3];
+	for (i = 1; i < 10; i++)
+		for (int j = 0; j < i; j++)
+		{
+			double temp = 0.0;
+			for (int t = 0; t < 2; t++)
+				temp += (mt[i * 2 + t] - mt[j * 2 + t]) * (mt[i * 2 + t] - mt[j * 2 + t]);
+			sum += (dis[k - 1] - sqrt(temp)) * (dis[k - 1] - sqrt(temp));
+			k++;
+		}
+	return sum;
+}
