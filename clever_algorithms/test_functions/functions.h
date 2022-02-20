@@ -94,5 +94,15 @@ double chichinadze(const double* x, const int n);
  * \param n dimension, n = 17
  * \return computed result
  */
-double cola(const double* x, const int n)
+double cola(const double* x, const int n);
+
+/**
+ * \brief Colville function
+ * A 4-dimensional function, The global minimum is 0,
+ * at the point(1, 1, 1, 1).
+ * \param x input var
+ * \param n dimension, n = 4
+ * \return computed result
+ */
+double colville(const double* x, const int n);
 #endif
