@@ -201,3 +201,36 @@ double colville(const double* x, const int n)
 		+ 10.1 * (pow(x[1] - 1, 2) + pow(x[3] - 1, 2))
 		+ 19.8 * (x[1] - 1) * (x[3] - 1);
 }
+
+
+static double sign(const double x)
+{
+	return x < 0.0 ? -1.0 : 1.0;
+}
+
+
+/**
+ * \brief Corana function
+ * A 4-dimensional function, The global minimum is 0.
+ * \param x input var
+ * \param n dimension, n = 4
+ * \return computed result
+ */
+double corana(const double* x, const int n)
+{
+	const double d[] = {1, 1000, 10, 100};
+	double s = 0.0;
+	for (int i = 0; i < 4; i++)
+	{
+		double z = floor(fabs(x[i] / 0.2) + 0.49999) * sign(x[i]) * 0.2;
+		if (fabs(x[i] - z) < 0.05)
+		{
+			s += 0.15 * (z - 0.05 * sign(z)) * (z - 0.05 * sign(z)) * d[i];
+		}
+		else
+		{
+			s += d[i] * x[i] * x[i];
+		}
+	}
+	return s;
+}

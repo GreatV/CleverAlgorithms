@@ -105,4 +105,13 @@ double cola(const double* x, const int n);
  * \return computed result
  */
 double colville(const double* x, const int n);
+
+/**
+ * \brief Corana function
+ * A 4-dimensional function, The global minimum is 0.
+ * \param x input var
+ * \param n dimension, n = 4
+ * \return computed result
+ */
+double corana(const double* x, const int n);
 #endif
