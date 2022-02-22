@@ -234,3 +234,18 @@ double corana(const double* x, const int n)
 	}
 	return s;
 }
+
+
+/**
+ * \brief Easom function
+ * A 2-dimensional function, The global minimum is -1,
+ * at point (-pi, pi).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double easom(const double* x, const int n)
+{
+	return -cos(x[0]) * cos(x[1]) * 
+		exp(- (x[0] - M_PI) * (x[0] - M_PI) - (x[1] - M_PI) * (x[0] - M_PI));
+}

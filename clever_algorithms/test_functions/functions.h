@@ -114,4 +114,14 @@ double colville(const double* x, const int n);
  * \return computed result
  */
 double corana(const double* x, const int n);
+
+/**
+ * \brief Easom function
+ * A 2-dimensional function, The global minimum is -1,
+ * at point (-pi, pi).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double easom(const double* x, const int n);
 #endif
