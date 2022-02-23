@@ -249,3 +249,21 @@ double easom(const double* x, const int n)
 	return -cos(x[0]) * cos(x[1]) * 
 		exp(- (x[0] - M_PI) * (x[0] - M_PI) - (x[1] - M_PI) * (x[0] - M_PI));
 }
+
+
+/**
+ * \brief Egg holder function
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double eggholder(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < n - 1; i++)
+	{
+		sum += -(x[i + 1] + 47.0) * sin(sqrt(fabs(x[i + 1] + x[i] * 0.5 + 47.0))) +
+			sin(sqrt(fabs(x[i] - (x[i + 1] + 47.0)))) * (-x[i]);
+	}
+	return sum;
+}

@@ -124,4 +124,12 @@ double corana(const double* x, const int n);
  * \return computed result
  */
 double easom(const double* x, const int n);
+
+/**
+ * \brief Egg holder function
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double eggholder(const double* x, const int n);
 #endif
