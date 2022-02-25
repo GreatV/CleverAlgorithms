@@ -267,3 +267,19 @@ double eggholder(const double* x, const int n)
 	}
 	return sum;
 }
+
+
+/**
+ * \brief Gear function
+ *
+ * A 4-dimensional function, The global minimum is 2.7e-12,
+ * at (16, 19, 43, 49).
+ * \param x input var
+ * \param n dimension, n = 4
+ * \return computed result
+ */
+double gear(const double* x, const int n)
+{
+	const double t = 1.0 / 6.931 - floor(x[0]) * floor(x[1]) / (floor(x[2]) * floor(x[3]));
+	return t * t;
+}
