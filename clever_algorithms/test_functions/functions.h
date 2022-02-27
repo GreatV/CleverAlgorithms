@@ -143,4 +143,16 @@ double eggholder(const double* x, const int n);
  * \return computed result
  */
 double gear(const double* x, const int n);
+
+
+/**
+ * \brief GoldsteinPrice function
+ *
+ * A 2-dimensional function, The global minimum is 3,
+ * at (0, -1).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double goldstein_price(const double* x, const int n);
 #endif

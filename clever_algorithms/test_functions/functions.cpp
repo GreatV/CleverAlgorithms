@@ -283,3 +283,23 @@ double gear(const double* x, const int n)
 	const double t = 1.0 / 6.931 - floor(x[0]) * floor(x[1]) / (floor(x[2]) * floor(x[3]));
 	return t * t;
 }
+
+
+/**
+ * \brief GoldsteinPrice function
+ *
+ * A 2-dimensional function, The global minimum is 3,
+ * at (0, -1).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double goldstein_price(const double* x, const int n)
+{
+	return (1.0 + pow(x[0] + x[1] + 1.0, 2) *
+			(19.0 - 14.0 * x[0] + 3.0 * x[0] * x[0] - 14.0 * x[1]
+				+ 6.0 * x[0] * x[1] + 3.0 * x[1] * x[1])) *
+		(30.0 + pow(2.0 * x[0] - 3.0 * x[1], 2) *
+			(18.0 - 32.0 * x[0] + 12.0 * x[0] * x[0] + 48.0 * x[1]
+				- 36.0 * x[0] * x[1] + 27.0 * x[1] * x[1]));
+}
