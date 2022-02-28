@@ -303,3 +303,25 @@ double goldstein_price(const double* x, const int n)
 			(18.0 - 32.0 * x[0] + 12.0 * x[0] * x[0] + 48.0 * x[1]
 				- 36.0 * x[0] * x[1] + 27.0 * x[1] * x[1]));
 }
+
+
+/**
+ * \brief Griewank function
+ *
+ * A 2-dimensional function, The global minimum is 0,
+ * at (0, 0).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double griewank(const double* x, const int n)
+{
+	double sum = 0;
+	double prod = 1;
+	for (int i = 0; i < 10; i++)
+	{
+		sum += x[i] * x[i];
+		prod *= cos(x[i] / sqrt(static_cast<double>(i + 1)));
+	}
+	return sum / 4000.0 - prod + 1;
+}
