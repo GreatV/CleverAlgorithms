@@ -166,4 +166,15 @@ double goldstein_price(const double* x, const int n);
  * \return computed result
  */
 double griewank(const double* x, const int n);
+
+
+/**
+ * \brief Hansen function
+ *
+ * A 2-dimensional function, The global minimum is -176.54,.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double hansen(const double* x, const int n);
 #endif

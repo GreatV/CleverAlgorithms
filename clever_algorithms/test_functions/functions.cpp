@@ -325,3 +325,23 @@ double griewank(const double* x, const int n)
 	}
 	return sum / 4000.0 - prod + 1;
 }
+
+
+/**
+ * \brief Hansen function
+ *
+ * A 2-dimensional function, The global minimum is -176.54,.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double hansen(const double* x, const int n)
+{
+	return (cos(1.0) + 2.0 * cos(x[0] + 2.0)
+		+ 3.0 * cos(2.0 * x[0] + 3.0) + 4.0 * cos(3.0 * x[0] + 4.0)
+		+ 5.0 * cos(4.0 * x[0] + 5.0)) * (cos(2.0 * x[1] + 1.0)
+		+ 2.0 * cos(3.0 * x[1] + 2.0)
+		+ 3.0 * cos(4.0 * x[1] + 3.0)
+		+ 4.0 * cos(5.0 * x[1] + 4.0)
+		+ 5.0 * cos(6.0 * x[1] + 5.0));
+}
