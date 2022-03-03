@@ -345,3 +345,44 @@ double hansen(const double* x, const int n)
 		+ 4.0 * cos(5.0 * x[1] + 4.0)
 		+ 5.0 * cos(6.0 * x[1] + 5.0));
 }
+
+
+/**
+ * \brief Hartman function
+ *
+ * The global minimum is − 3:86,
+ * at (0.114, 0.556, 0.852).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double hartman3(const double* x, const int n)
+{
+	static double a[4][3] = {
+		{3, 10, 30},
+		{0.1, 10, 35},
+		{3, 10, 30},
+		{0.1, 10, 35}
+	};
+	const double c[] = {1, 1.2, 3, 3.2};
+	const double p[4][3] = {
+		{0.3689, 0.1170, 0.2673},
+		{0.4699, 0.4387, 0.7470},
+		{0.1091, 0.8732, 0.5547},
+		{0.03815, 0.5743, 0.8828}
+	};
+
+	double s = 0.0;
+	for (int i = 0; i < 4; i++)
+	{
+		double t = 0.0;
+		for (int j = 0; j < n; j++)
+		{
+			const double t1 = x[j] - p[i][j];
+			t += a[i][j] * (t1 * t1);
+		}
+		s
+			+= c[i] * exp(-t);
+	}
+	return -s;
+}

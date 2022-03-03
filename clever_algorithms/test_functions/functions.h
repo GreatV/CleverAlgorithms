@@ -177,4 +177,16 @@ double griewank(const double* x, const int n);
  * \return computed result
  */
 double hansen(const double* x, const int n);
+
+
+/**
+ * \brief Hartman function
+ *
+ * The global minimum is − 3:86,
+ * at (0.114, 0.556, 0.852).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double hartman3(const double* x, const int n = 3);
 #endif
