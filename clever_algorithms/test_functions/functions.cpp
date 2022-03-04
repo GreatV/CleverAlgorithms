@@ -386,3 +386,43 @@ double hartman3(const double* x, const int n)
 	}
 	return -s;
 }
+
+
+/**
+ * \brief Hartman function
+ *
+ * The global minimum is -3.32,
+ * at (0.201, 0.150, 0.477, 0.275, 0.311, 0.657).
+ * \param x input var
+ * \param n dimension, n = 6
+ * \return computed result
+ */
+double hartman6(const double* x, const int n)
+{
+	static double a[4][6] = {
+		{10, 3, 17, 3.5, 1.7, 8.0},
+		{0.05, 10, 17, 0.1, 8, 14},
+		{3, 3.5, 1.7, 10, 17, 8},
+		{17, 8, 0.05, 10, 0.1, 14}
+	};
+	const double c[] = {1, 1.2, 3, 3.2};
+	const double p[4][6] = {
+		{0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886},
+		{0.2329, 0.4135, 0.8307, 0.3736, 0.1004, 0.9991},
+		{0.2348, 0.1415, 0.3522, 0.2883, 0.3047, 0.6650},
+		{0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381}
+	};
+
+	double s = 0.0;
+	for (int i = 0; i < 4; i++)
+	{
+		double t = 0.0;
+		for (int j = 0; j < n; j++)
+		{
+			const double t1 = x[j] - p[i][j];
+			t += a[i][j] * (t1 * t1);
+		}
+		s += c[i] * exp(-t);
+	}
+	return -s;
+}

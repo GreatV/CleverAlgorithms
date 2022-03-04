@@ -189,4 +189,16 @@ double hansen(const double* x, const int n);
  * \return computed result
  */
 double hartman3(const double* x, const int n = 3);
+
+
+/**
+ * \brief Hartman function
+ *
+ * The global minimum is -3.32,
+ * at (0.201, 0.150, 0.477, 0.275, 0.311, 0.657).
+ * \param x input var
+ * \param n dimension, n = 6
+ * \return computed result
+ */
+double hartman6(const double* x, const int n = 6);
 #endif
