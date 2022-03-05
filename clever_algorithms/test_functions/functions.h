@@ -201,4 +201,16 @@ double hartman3(const double* x, const int n = 3);
  * \return computed result
  */
 double hartman6(const double* x, const int n = 6);
+
+
+/**
+ * \brief Himmelblau function
+ *
+ * The global minimum is 0,
+ * at (3, 2).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double himmelblau(const double* x, const int n);
 #endif
