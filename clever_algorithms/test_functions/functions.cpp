@@ -441,3 +441,24 @@ double himmelblau(const double* x, const int n)
 	return (x[0] * x[0] + x[1] - 11.0) * (x[0] * x[0] + x[1] - 11.0) +
 		(x[0] + x[1] * x[1] - 7) * (x[0] + x[1] * x[1] - 7);
 }
+
+/**
+ * \brief Holzman function
+ *
+ * The global minimum is 0,
+ * at (50, 25, 1.5).
+ * \param x input var
+ * \param n dimension, n = 3
+ * \return computed result
+ */
+double holzman1(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < 100; i++)
+	{
+		const double ui = 25 + pow(-50.0 * log(0.01 * (i + 1)), 2.0 / 3.0);
+		sum += -0.1 * (i + 1) + 
+			exp(1 / x[0] * pow(ui - x[1], x[2]));
+	}
+	return sum;
+}
