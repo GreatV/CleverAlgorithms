@@ -462,3 +462,24 @@ double holzman1(const double* x, const int n)
 	}
 	return sum;
 }
+
+
+/**
+ * \brief Holzman function
+ *
+ * The global minimum is 0,
+ * at (0, ..., 0).
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double holzman2(const double* x, const int n)
+
+{
+	double sum = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += i * pow(x[i], 4);
+	}
+	return sum;
+}

@@ -224,4 +224,16 @@ double himmelblau(const double* x, const int n);
  * \return computed result
  */
 double holzman1(const double* x, const int n);
+
+
+/**
+ * \brief Holzman function
+ *
+ * The global minimum is 0,
+ * at (0, ..., 0).
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double holzman2(const double* x, const int n);
 #endif
