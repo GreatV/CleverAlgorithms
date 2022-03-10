@@ -483,3 +483,17 @@ double holzman2(const double* x, const int n)
 	}
 	return sum;
 }
+
+/**
+ * \brief Hosaki function
+ *
+ * The global minimum is -2.3458,
+ * at (4, 2).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double hosaki(const double* x, const int n)
+{
+	return (1 + x[0] * (-8 + x[0] * (7 + x[0] * (-7.0 / 3.0 + x[0] * 1.0 / 4.0)))) * x[1] * x[1] * exp(-x[1]);
+}
