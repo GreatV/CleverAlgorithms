@@ -248,4 +248,15 @@ double holzman2(const double* x, const int n);
  * \return computed result
  */
 double hosaki(const double* x, const int n);
+
+/**
+ * \brief Katsuuras function
+ *
+ * The global minimum is 0,
+ * at (0,...,0).
+ * \param x input var
+ * \param n dimension, n = 10
+ * \return computed result
+ */
+double katsuuras(const double* x, const int n);
 #endif

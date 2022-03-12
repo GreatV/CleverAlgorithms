@@ -497,3 +497,30 @@ double hosaki(const double* x, const int n)
 {
 	return (1 + x[0] * (-8 + x[0] * (7 + x[0] * (-7.0 / 3.0 + x[0] * 1.0 / 4.0)))) * x[1] * x[1] * exp(-x[1]);
 }
+
+
+/**
+ * \brief Katsuuras function
+ *
+ * The global minimum is 0,
+ * at (0,...,0).
+ * \param x input var
+ * \param n dimension, n = 10
+ * \return computed result
+ */
+double katsuuras(const double* x, const int n)
+{
+	double prod = 1.0;
+	for (int i = 0; i < n; i++)
+	{
+		const int d = 32;
+		double s = 0.0;
+		for (int k = 1; k <= d; k++)
+		{
+			const double pow2 = pow(2, k);
+			s += round(pow2 * x[i]) / pow2;
+		}
+		prod *= 1.0 + (i + 1) * s;
+	}
+	return prod;
+}
