@@ -1,6 +1,7 @@
 #include "functions.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <float.h>
 
 
 /**
@@ -523,4 +524,44 @@ double katsuuras(const double* x, const int n)
 		prod *= 1.0 + (i + 1) * s;
 	}
 	return prod;
+}
+
+
+/**
+ * \brief Lennard-Jones function
+ *
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double lennard_jones(const double* x, const int n)
+{
+	int j3;
+	double E;
+	const int n_atoms = n / 3;
+	for (int i = 0; i < n_atoms; i++)
+	{
+		const int i3 = i * 3;
+		for (int j = i + 1; j < n_atoms; j++)
+		{
+			double dz = 0.0;
+			double z = x[i3] - x[j3 = j * 3];
+			dz += z * z;
+			z = x[i3 + 1] - x[j3 + 1];
+			dz += z * z;
+			z = x[i3 + 2] - x[j3 + 2];
+			dz += z * z;
+			if (dz < 1.0e-6)
+			{
+				/* one pair of atoms too near ? */
+				return DBL_MAX;
+			}
+			else
+			{
+				const double dzp = 1.0 / (dz * dz * dz);
+				E += (dzp - 2.0) * dzp;
+			}
+		}
+	}
+	return E;
 }

@@ -259,4 +259,13 @@ double hosaki(const double* x, const int n);
  * \return computed result
  */
 double katsuuras(const double* x, const int n);
+
+/**
+ * \brief Lennard-Jones function
+ *
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double lennard_jones(const double* x, const int n);
 #endif
