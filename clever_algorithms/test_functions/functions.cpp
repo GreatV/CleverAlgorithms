@@ -565,3 +565,17 @@ double lennard_jones(const double* x, const int n)
 	}
 	return E;
 }
+
+/**
+ * \brief Leon function
+ *
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double leon(const double* x, const int n)
+{
+	const double a = x[1] - x[0] * x[0] * x[0];
+	const double b = 1.0 - x[0];
+	return 100.0 * a * a + b * b;
+}

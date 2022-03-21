@@ -268,4 +268,13 @@ double katsuuras(const double* x, const int n);
  * \return computed result
  */
 double lennard_jones(const double* x, const int n);
+
+/**
+ * \brief Leon function
+ *
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double leon(const double* x, const int n);
 #endif
