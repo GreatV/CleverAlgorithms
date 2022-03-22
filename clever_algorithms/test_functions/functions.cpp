@@ -579,3 +579,24 @@ double leon(const double* x, const int n)
 	const double b = 1.0 - x[0];
 	return 100.0 * a * a + b * b;
 }
+
+/**
+ * \brief Levy function
+
+* The global minimum is -21.502356,
+ * at (1,1,1,-9.752356 ) for n = 4.
+ * And global minimum is -11.504403,
+ * at (1, ..., 1, ,-4.754402) for n = 5, 6, 7.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double levy(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i <= n - 2; i++)
+		sum += pow(x[i] - 1, 2.0) * (1 + pow(sin(3 * M_PI * x[i + 1]), 2.0));
+
+	return pow(sin(3 * M_PI * x[0]), 2.0) + sum +
+		(x[n - 1] - 1) * (1 + pow(sin(2 * M_PI * x[n - 1]), 2.0));
+}

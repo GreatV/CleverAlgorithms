@@ -277,4 +277,18 @@ double lennard_jones(const double* x, const int n);
  * \return computed result
  */
 double leon(const double* x, const int n);
+
+
+/**
+ * \brief Levy function
+
+* The global minimum is -21.502356,
+ * at (1,1,1,-9.752356 ) for n = 4.
+ * And global minimum is -11.504403,
+ * at (1, ..., 1, ,-4.754402) for n = 5, 6, 7.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double levy(const double* x, const int n);
 #endif
