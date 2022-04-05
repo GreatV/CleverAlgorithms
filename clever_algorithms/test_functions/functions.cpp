@@ -600,3 +600,18 @@ double levy(const double* x, const int n)
 	return pow(sin(3 * M_PI * x[0]), 2.0) + sum +
 		(x[n - 1] - 1) * (1 + pow(sin(2 * M_PI * x[n - 1]), 2.0));
 }
+
+
+/**
+ * \brief Matyas Function
+
+* The global minimum is 0,
+ * at (0, 0) for n = 2.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double matyas(int n, double* x)
+{
+	return 0.26 * (x[0] * x[0] + x[1] * x[1]) - 0.48 * x[0] * x[1];
+}

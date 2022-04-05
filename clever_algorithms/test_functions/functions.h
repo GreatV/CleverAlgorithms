@@ -291,4 +291,16 @@ double leon(const double* x, const int n);
  * \return computed result
  */
 double levy(const double* x, const int n);
+
+
+/**
+ * \brief Matyas Function
+
+* The global minimum is 0,
+ * at (0, 0) for n = 2.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double matyas(int n, double* x);
 #endif
