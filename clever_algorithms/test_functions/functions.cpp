@@ -611,7 +611,28 @@ double levy(const double* x, const int n)
  * \param n dimension, n = 2
  * \return computed result
  */
-double matyas(int n, double* x)
+double matyas(const double* x, const int n)
 {
 	return 0.26 * (x[0] * x[0] + x[1] * x[1]) - 0.48 * x[0] * x[1];
+}
+
+/**
+ * \brief Maxmod Function
+
+* The global minimum is 0,
+ * at (0, ..., 0).
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double maxmod(const double* x, const int n)
+{
+	double t = x[0];
+	double u = 0.0;
+	for (int i = 1; i < n; i++)
+	{
+		u = fabs(x[i]);
+		if (u < t) t = u;
+	}
+	return u;
 }
