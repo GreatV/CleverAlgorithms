@@ -636,3 +636,19 @@ double maxmod(const double* x, const int n)
 	}
 	return u;
 }
+
+
+/**
+ * \brief McCormick Function
+
+* The global minimum is -1.9133,
+ * at (-0.547, -1.54719).
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double mc_cormick(const double* x, const int n)
+{
+	return sin(x[0] + x[1])
+		+ pow(x[0] - x[1], 2.0) - 1.5 * x[0] + 2.5 * x[1] + 1.0;
+}
