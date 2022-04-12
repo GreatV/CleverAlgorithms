@@ -327,4 +327,14 @@ double maxmod(const double* x, const int n);
  */
 double mc_cormick(const double* x, const int n);
 
+/**
+ * \brief Michalewitz Function
+
+ * The global minimum is .
+ * -0.966n.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double michalewitz(const double* x, const int n);
 #endif

@@ -652,3 +652,24 @@ double mc_cormick(const double* x, const int n)
 	return sin(x[0] + x[1])
 		+ pow(x[0] - x[1], 2.0) - 1.5 * x[0] + 2.5 * x[1] + 1.0;
 }
+
+
+/**
+ * \brief Michalewitz Function
+
+ * The global minimum is .
+ * -0.966n.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double michalewitz(const double* x, const int n)
+{
+	double u = 0;
+	for (int i = 0; i < n; i++)
+	{
+		u = u + sin(x[i])
+			* pow(sin((i + 1) * x[i] * x[i] / M_PI), 2.0 * 10.0);
+	}
+	return -u;
+}
