@@ -673,3 +673,25 @@ double michalewitz(const double* x, const int n)
 	}
 	return -u;
 }
+
+/**
+ * \brief Multimod Function
+
+ * The global minimum is .
+ * 0 at (0, 0, .., 0).
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double multimod(const double* x, const int n)
+{
+	double p;
+	double s = p = fabs(x[0]);
+	for (int i = 1; i < n; i++)
+	{
+		const double t = fabs(x[1]);
+		s += t;
+		p *= t;
+	}
+	return s + p;
+}

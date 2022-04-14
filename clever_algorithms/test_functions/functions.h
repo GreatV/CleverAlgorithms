@@ -337,4 +337,15 @@ double mc_cormick(const double* x, const int n);
  * \return computed result
  */
 double michalewitz(const double* x, const int n);
+
+/**
+ * \brief Multimod Function
+
+ * The global minimum is .
+ * 0 at (0, 0, .., 0).
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double multimod(const double* x, const int n);
 #endif
