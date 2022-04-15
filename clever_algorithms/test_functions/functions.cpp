@@ -695,3 +695,26 @@ double multimod(const double* x, const int n)
 	}
 	return s + p;
 }
+
+
+/**
+ * \brief Paviani Function
+
+ * The global minimum is .
+ * -45.7784 at (9.340266, 9.340266, .., 9.340266).
+ * \param x input var
+ * \param n dimension, n = 10
+ * \return computed result
+ */
+double paviani(const double* x, const int n)
+{
+	double sum = 0.0, mul = 1.0;
+	for (int i = 0; i < n; i++)
+	{
+		const double a = log(x[i] - 2.0);
+		const double b = log(10.0 - x[i]);
+		sum += a * a + b * b;
+		mul *= x[i];
+	}
+	return sum - pow(mul, 0.2);
+}

@@ -348,4 +348,16 @@ double michalewitz(const double* x, const int n);
  * \return computed result
  */
 double multimod(const double* x, const int n);
+
+
+/**
+ * \brief Paviani Function
+
+ * The global minimum is .
+ * -45.7784 at (9.340266, 9.340266, .., 9.340266).
+ * \param x input var
+ * \param n dimension, n = 10
+ * \return computed result
+ */
+double paviani(const double* x, const int n);
 #endif
