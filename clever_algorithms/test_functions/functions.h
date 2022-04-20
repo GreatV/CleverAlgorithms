@@ -360,4 +360,15 @@ double multimod(const double* x, const int n);
  * \return computed result
  */
 double paviani(const double* x, const int n);
+
+/**
+ * \brief plateau Function
+
+ * The global minimum is .
+ * 30 at (0, 0, 0, 0, 0).
+ * \param x input var
+ * \param n dimension, n = 5
+ * \return computed result
+ */
+double plateau(const double* x, const int n);
 #endif

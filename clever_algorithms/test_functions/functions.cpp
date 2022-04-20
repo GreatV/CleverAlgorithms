@@ -718,3 +718,22 @@ double paviani(const double* x, const int n)
 	}
 	return sum - pow(mul, 0.2);
 }
+
+/**
+ * \brief plateau Function
+
+ * The global minimum is .
+ * 30 at (0, 0, 0, 0, 0).
+ * \param x input var
+ * \param n dimension, n = 5
+ * \return computed result
+ */
+double plateau(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < 5; i++)
+	{
+		sum += floor(x[i]);
+	}
+	return 30.0 + sum;
+}
