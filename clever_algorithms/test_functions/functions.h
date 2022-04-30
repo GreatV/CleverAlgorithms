@@ -330,7 +330,7 @@ double mc_cormick(const double* x, const int n);
 /**
  * \brief Michalewitz Function
 
- * The global minimum is .
+ * The global minimum is
  * -0.966n.
  * \param x input var
  * \param n dimension
@@ -341,7 +341,7 @@ double michalewitz(const double* x, const int n);
 /**
  * \brief Multimod Function
 
- * The global minimum is .
+ * The global minimum is
  * 0 at (0, 0, .., 0).
  * \param x input var
  * \param n dimension
@@ -353,7 +353,7 @@ double multimod(const double* x, const int n);
 /**
  * \brief Paviani Function
 
- * The global minimum is .
+ * The global minimum is
  * -45.7784 at (9.340266, 9.340266, .., 9.340266).
  * \param x input var
  * \param n dimension, n = 10
@@ -364,11 +364,22 @@ double paviani(const double* x, const int n);
 /**
  * \brief plateau Function
 
- * The global minimum is .
+ * The global minimum is
  * 30 at (0, 0, 0, 0, 0).
  * \param x input var
  * \param n dimension, n = 5
  * \return computed result
  */
 double plateau(const double* x, const int n);
+
+/**
+ * \brief Powell Function
+
+ * The global minimum is 
+ * 0 at (3, -1, 0, 1,..., 3, -1, 0, 1).
+ * \param x input var
+ * \param n dimension, n is divisible by 4.
+ * \return computed result
+ */
+double powell(const double* x, const int n);
 #endif

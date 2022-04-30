@@ -657,7 +657,7 @@ double mc_cormick(const double* x, const int n)
 /**
  * \brief Michalewitz Function
 
- * The global minimum is .
+ * The global minimum is
  * -0.966n.
  * \param x input var
  * \param n dimension
@@ -677,7 +677,7 @@ double michalewitz(const double* x, const int n)
 /**
  * \brief Multimod Function
 
- * The global minimum is .
+ * The global minimum is
  * 0 at (0, 0, .., 0).
  * \param x input var
  * \param n dimension
@@ -700,7 +700,7 @@ double multimod(const double* x, const int n)
 /**
  * \brief Paviani Function
 
- * The global minimum is .
+ * The global minimum is
  * -45.7784 at (9.340266, 9.340266, .., 9.340266).
  * \param x input var
  * \param n dimension, n = 10
@@ -722,7 +722,7 @@ double paviani(const double* x, const int n)
 /**
  * \brief plateau Function
 
- * The global minimum is .
+ * The global minimum is
  * 30 at (0, 0, 0, 0, 0).
  * \param x input var
  * \param n dimension, n = 5
@@ -736,4 +736,28 @@ double plateau(const double* x, const int n)
 		sum += floor(x[i]);
 	}
 	return 30.0 + sum;
+}
+
+
+/**
+ * \brief Powell Function
+
+ * The global minimum is 
+ * 0 at (3, -1, 0, 1,..., 3, -1, 0, 1).
+ * \param x input var
+ * \param n dimension, n is divisible by 4.
+ * \return computed result
+ */
+double powell(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int j = 0; j < n / 4; j++)
+	{
+		sum += (x[4 * j - 3] + 10 * x[4 * j - 2]) * (x[4 * j - 3] + 10 * x[4 * j - 2])
+			+ 5 * (x[4 * j - 1] - x[4 * j]) * (x[4 * j - 1] - x[4 * j])
+			+ pow(x[4 * j - 2] - 2 * x[4 * j - 1], 4)
+			+ 10 * pow(x[4 * j - 3] - x[4 * j], 4);
+	}
+
+	return sum;
 }
