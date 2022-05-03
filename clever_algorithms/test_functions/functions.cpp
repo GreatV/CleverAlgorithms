@@ -761,3 +761,23 @@ double powell(const double* x, const int n)
 
 	return sum;
 }
+
+
+/**
+ * \brief Ranna Function
+
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double rana(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < n - 1; i++)
+	{
+		const double t1 = sqrt(fabs(x[i + 1] + x[i] + 1.0));
+		const double t2 = sqrt(fabs(x[i + 1] - x[i] + 1.0));
+		sum += (x[i + 1] + 1.0) * cos(t2) * sin(t1) + cos(t1) * sin(t2) * x[i];
+	}
+	return sum;
+}

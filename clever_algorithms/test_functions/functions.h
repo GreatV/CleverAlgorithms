@@ -382,4 +382,14 @@ double plateau(const double* x, const int n);
  * \return computed result
  */
 double powell(const double* x, const int n);
+
+
+/**
+ * \brief Ranna Function
+
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double rana(const double* x, const int n);
 #endif
