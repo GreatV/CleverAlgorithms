@@ -392,4 +392,13 @@ double powell(const double* x, const int n);
  * \return computed result
  */
 double rana(const double* x, const int n);
+
+/**
+ * \brief Rastrigin Function
+
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double rastrigin(const double* x, const int n);
 #endif

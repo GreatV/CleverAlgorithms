@@ -781,3 +781,21 @@ double rana(const double* x, const int n)
 	}
 	return sum;
 }
+
+/**
+ * \brief Rastrigin Function
+
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double rastrigin(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		const double t = x[i];
+		sum += t * t - cos(2.0 * M_PI * x[i]);
+	}
+	return sum + n * 10;
+}
