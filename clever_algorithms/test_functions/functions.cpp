@@ -815,3 +815,17 @@ double rosenbrock(const double* x, const int n)
 	const double b = 1.0 - x[0];
 	return 100.0 * a * a + b * b;
 }
+
+/**
+ * \brief Schaffer function
+ *
+ * The global minimum is 0 at x_i = 0.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double Schaffer(const double* x, const int n)
+{
+	return pow(x[0] * x[0] + x[1] * x[1], 0.25)
+		* (50.0 * pow(x[0] * x[0] + x[1] * x[1], 0.1) + 1.0);
+}

@@ -410,5 +410,15 @@ double rastrigin(const double* x, const int n);
  * \param n dimension, n = 2
  * \return computed result
  */
-double rosenbrock(const double* x, const int n)；
+double rosenbrock(const double* x, const int n);
+
+/**
+ * \brief Schaffer function
+ *
+ * The global minimum is 0 at x_i = 0.
+ * \param x input var
+ * \param n dimension, n = 2
+ * \return computed result
+ */
+double Schaffer(const double* x, const int n);
 #endif
