@@ -824,8 +824,32 @@ double rosenbrock(const double* x, const int n)
  * \param n dimension, n = 2
  * \return computed result
  */
-double Schaffer(const double* x, const int n)
+double schaffer(const double* x, const int n)
 {
 	return pow(x[0] * x[0] + x[1] * x[1], 0.25)
 		* (50.0 * pow(x[0] * x[0] + x[1] * x[1], 0.1) + 1.0);
+}
+
+
+/**
+ * \brief Schaffer function
+ *
+ * The global minimum is 0 at x_i = 0.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double schwefel1_2(const double* x, const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		double sum1 = 0.0;
+		for (int j = 0; j < i; j++)
+		{
+			sum1 += x[i];
+		}
+		sum += sum1 * sum1;
+	}
+	return sum;
 }
