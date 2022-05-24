@@ -853,3 +853,25 @@ double schwefel1_2(const double* x, const int n)
 	}
 	return sum;
 }
+
+/**
+ * \brief Schaffer function
+ *
+ * The global minimum is 0 at x_i = 0.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double schwefel2_21(const double* x, const int n)
+{
+	double s = fabs(x[0]);
+	for (int i = 1; i < n; i++)
+	{
+		double t = fabs(x[i]);
+		if (t > s)
+		{
+			s = t;
+		}
+	}
+	return s;
+}
