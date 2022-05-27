@@ -452,4 +452,14 @@ double schwefel2_21(const double* x, const int n);
  * \return computed result
  */
 double schwefel2_22(const double* x, const int n);
+
+/**
+ * \brief Schwefel function
+ *
+ * The global minimum is 0 at x_i = 0.
+ * \param x input var
+ * \param n dimension
+ * \return computed result
+ */
+double schwefel2_26(const double* x, const int n);
 #endif
