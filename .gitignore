@@ -1,9 +1,6 @@
 .vscode
 build
 
-*.ilk
-*pdb
-
 # Prerequisites
 *.d
 
